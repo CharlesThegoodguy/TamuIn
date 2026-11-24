@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen_159">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Top Header / Bar -->
+        <LinearLayout
+            android:id="@+id/layoutFormHeader159"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="12dp">
+
+            <ImageButton
+                android:id="@+id/btnBack159"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/btn_cancel_159"
+                android:src="@drawable/ic_arrow_back_159" />
+
+            <TextView
+                android:id="@+id/tvFormTitle159"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/text_primary_159"
+                android:textSize="20sp"
+                tools:text="@string/title_add_guest_159" />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="36dp">
+
+                <!-- Card Form Inputs -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardFormInputs159"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/surface_card_159"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/stroke_subtle_159"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <!-- Nama Tamu Input -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilNamaTamu159"
+                            style="@style/Widget.TamuIn159.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/guest_name_label_159"
+                            app:startIconDrawable="@drawable/ic_person_159">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etNamaTamu159"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textCapWords"
+                                android:maxLines="1"
+                                android:textColor="@color/text_primary_159" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Alamat / Instansi Input -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilAlamatTamu159"
+                            style="@style/Widget.TamuIn159.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:hint="@string/guest_address_label_159"
+                            app:startIconDrawable="@drawable/ic_location_159">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etAlamatTamu159"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textCapSentences"
+                                android:maxLines="2"
+                                android:textColor="@color/text_primary_159" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Keperluan Input (Multiline) -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilKeperluanTamu159"
+                            style="@style/Widget.TamuIn159.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:hint="@string/guest_purpose_label_159"
+                            app:startIconDrawable="@drawable/ic_notes_159">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etKeperluanTamu159"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top|start"
+                                android:inputType="textMultiLine|textCapSentences"
+                                android:minLines="3"
+                                android:textColor="@color/text_primary_159" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Info Timestamp / Status Box -->
+                        <LinearLayout
+                            android:id="@+id/layoutInfoWaktu159"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/bg_search_box_159"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:contentDescription="@string/info_timestamp_add_159"
+                                android:src="@drawable/ic_calendar_159"
+                                app:tint="@color/accent_blue_159" />
+
+                            <TextView
+                                android:id="@+id/tvInfoWaktu159"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="sans-serif"
+                                android:text="@string/info_timestamp_add_159"
+                                android:textColor="@color/text_secondary_159"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Action Button: Simpan / Perbarui -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveGuest159"
+                    style="@style/Widget.TamuIn159.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="@color/accent_blue_159"
+                    android:text="@string/btn_save_guest_159"
+                    android:textColor="@color/white_159"
+                    android:textSize="16sp" />
+
+                <!-- Action Button: Hapus (Mode Edit Only) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDeleteGuest159"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="@color/error_red_subtle_159"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/btn_delete_guest_159"
+                    android:textColor="@color/error_red_159"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/ic_delete_159"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/error_red_159"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

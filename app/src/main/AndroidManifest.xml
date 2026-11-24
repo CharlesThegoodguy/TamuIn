@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name=".TamuInApp159"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_book_159"
+        android:label="@string/app_name_159"
+        android:roundIcon="@drawable/ic_book_159"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TamuIn159">
+
+        <!-- LoginActivity159: Launcher Activity -->
+        <activity
+            android:name=".ui.auth.LoginActivity159"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- RegisterActivity159 -->
+        <activity
+            android:name=".ui.auth.RegisterActivity159"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- DashboardActivity159 -->
+        <activity
+            android:name=".ui.dashboard.DashboardActivity159"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- GuestFormActivity159 -->
+        <activity
+            android:name=".ui.form.GuestFormActivity159"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+    </application>
+
+</manifest>

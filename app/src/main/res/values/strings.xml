@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name_159">TamuIn 159</string>
+    <string name="app_tagline_159">Buku Tamu Digital Modern</string>
+
+    <!-- Auth Strings -->
+    <string name="login_title_159">Selamat Datang</string>
+    <string name="login_subtitle_159">Silakan masuk ke akun TamuIn Anda</string>
+    <string name="username_label_159">Nama Pengguna</string>
+    <string name="username_hint_159">Masukkan username</string>
+    <string name="password_label_159">Kata Sandi</string>
+    <string name="password_hint_159">Masukkan kata sandi</string>
+    <string name="confirm_password_label_159">Konfirmasi Kata Sandi</string>
+    <string name="confirm_password_hint_159">Ulangi kata sandi</string>
+    <string name="btn_login_159">Masuk</string>
+    <string name="btn_register_159">Daftar Akun</string>
+    <string name="no_account_prompt_159">Belum punya akun? Daftar di sini</string>
+    <string name="have_account_prompt_159">Sudah punya akun? Masuk</string>
+    <string name="register_title_159">Daftar Akun Baru</string>
+    <string name="register_subtitle_159">Buat akun untuk mengelola buku tamu secara aman</string>
+
+    <!-- Dashboard Strings -->
+    <string name="greeting_user_prefix_159">Halo, </string>
+    <string name="logout_159">Keluar</string>
+    <string name="card_daily_guest_title_159">Total Tamu Hari Ini</string>
+    <string name="card_daily_guest_unit_159">Orang</string>
+    <string name="search_hint_159">Cari nama, alamat, atau keperluan...</string>
+    <string name="empty_guest_list_title_159">Belum Ada Data Tamu</string>
+    <string name="empty_guest_list_desc_159">Sentuh tombol + di bawah untuk mencatat tamu pertama Anda hari ini.</string>
+    <string name="recent_guests_title_159">Daftar Tamu Tercatat</string>
+
+    <!-- Form Strings -->
+    <string name="title_add_guest_159">Tambah Tamu Baru</string>
+    <string name="title_edit_guest_159">Edit Data Tamu</string>
+    <string name="guest_name_label_159">Nama Lengkap Tamu</string>
+    <string name="guest_name_hint_159">Contoh: Budi Pratama</string>
+    <string name="guest_address_label_159">Alamat / Instansi Asal</string>
+    <string name="guest_address_hint_159">Contoh: PT Teknologi Indonesia / Jakarta</string>
+    <string name="guest_purpose_label_159">Keperluan Kunjungan</string>
+    <string name="guest_purpose_hint_159">Jelaskan tujuan atau keperluan kunjungan...</string>
+    <string name="info_timestamp_add_159">Waktu kunjungan akan dicatat otomatis secara real-time saat disimpan.</string>
+    <string name="btn_save_guest_159">Simpan Data</string>
+    <string name="btn_update_guest_159">Perbarui Data</string>
+    <string name="btn_delete_guest_159">Hapus Data Tamu</string>
+
+    <!-- Dialogs & Feedback -->
+    <string name="dialog_delete_title_159">Hapus Data Tamu?</string>
+    <string name="dialog_delete_message_159">Data tamu ini akan dihapus secara permanen dari buku tamu Anda. Tindakan ini tidak dapat dibatalkan.</string>
+    <string name="dialog_logout_title_159">Keluar Akun?</string>
+    <string name="dialog_logout_message_159">Apakah Anda yakin ingin keluar dari akun Anda?</string>
+    <string name="btn_cancel_159">Batal</string>
+    <string name="btn_delete_confirm_159">Hapus</string>
+    <string name="btn_logout_confirm_159">Keluar</string>
+
+    <!-- Error & Validation Messages -->
+    <string name="err_empty_username_159">Username tidak boleh kosong</string>
+    <string name="err_empty_password_159">Kata sandi tidak boleh kosong</string>
+    <string name="err_password_too_short_159">Kata sandi minimal 6 karakter</string>
+    <string name="err_passwords_mismatch_159">Konfirmasi kata sandi tidak cocok</string>
+    <string name="err_username_exists_159">Username sudah digunakan, pilih username lain!</string>
+    <string name="err_login_failed_159">Username atau kata sandi salah!</string>
+    <string name="err_empty_name_159">Nama tamu wajib diisi</string>
+    <string name="err_empty_address_159">Alamat/Instansi wajib diisi</string>
+    <string name="err_empty_purpose_159">Keperluan kunjungan wajib diisi</string>
+
+    <!-- Success Messages -->
+    <string name="success_register_159">Registrasi akun berhasil! Silakan masuk.</string>
+    <string name="success_save_guest_159">Data tamu berhasil disimpan.</string>
+    <string name="success_update_guest_159">Data tamu berhasil diperbarui.</string>
+    <string name="success_delete_guest_159">Data tamu berhasil dihapus.</string>
+</resources>

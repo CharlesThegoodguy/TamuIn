@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme: DayNight adapts automatically to system mode. -->
+    <style name="Theme.TamuIn159" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/accent_blue_159</item>
+        <item name="colorOnPrimary">@color/white_159</item>
+        <item name="colorPrimaryContainer">@color/accent_blue_subtle_159</item>
+        <item name="colorOnPrimaryContainer">@color/accent_blue_159</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/accent_blue_159</item>
+        <item name="colorOnSecondary">@color/white_159</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/bg_screen_159</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/bg_screen_159</item>
+
+        <!-- Surface & Background -->
+        <item name="android:colorBackground">@color/bg_screen_159</item>
+        <item name="colorSurface">@color/surface_card_159</item>
+        <item name="colorOnSurface">@color/text_primary_159</item>
+    </style>
+
+    <!-- Apple-inspired Rounded Text Input Style -->
+    <style name="Widget.TamuIn159.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxStrokeColor">@color/accent_blue_159</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1.5dp</item>
+        <item name="hintTextColor">@color/accent_blue_159</item>
+    </style>
+
+    <!-- Apple-inspired Rounded Button Style -->
+    <style name="Widget.TamuIn159.Button" parent="Widget.Material3.Button">
+        <item name="cornerRadius">14dp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+</resources>
