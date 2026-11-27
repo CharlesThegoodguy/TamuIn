@@ -1,24 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Dark theme variant adapting to system dark mode. -->
-    <style name="Theme.TamuIn159" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.TamuIn166" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/accent_blue_159</item>
-        <item name="colorOnPrimary">@color/white_159</item>
-        <item name="colorPrimaryContainer">@color/accent_blue_subtle_159</item>
-        <item name="colorOnPrimaryContainer">@color/accent_blue_159</item>
+        <item name="colorPrimary">@color/accent_blue_166</item>
+        <item name="colorOnPrimary">@color/white_166</item>
+        <item name="colorPrimaryContainer">@color/accent_blue_subtle_166</item>
+        <item name="colorOnPrimaryContainer">@color/accent_blue_166</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/accent_blue_159</item>
-        <item name="colorOnSecondary">@color/white_159</item>
+        <item name="colorSecondary">@color/accent_blue_166</item>
+        <item name="colorOnSecondary">@color/white_166</item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/bg_screen_159</item>
+        <item name="android:statusBarColor">@color/bg_screen_166</item>
         <item name="android:windowLightStatusBar">false</item>
-        <item name="android:navigationBarColor">@color/bg_screen_159</item>
+        <item name="android:navigationBarColor">@color/bg_screen_166</item>
 
         <!-- Surface & Background -->
-        <item name="android:colorBackground">@color/bg_screen_159</item>
-        <item name="colorSurface">@color/surface_card_159</item>
-        <item name="colorOnSurface">@color/text_primary_159</item>
+        <item name="android:colorBackground">@color/bg_screen_166</item>
+        <item name="colorSurface">@color/surface_card_166</item>
+        <item name="colorOnSurface">@color/text_primary_166</item>
     </style>
 </resources>

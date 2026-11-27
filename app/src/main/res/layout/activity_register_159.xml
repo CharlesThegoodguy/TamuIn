@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_screen_159"
+    android:background="@color/bg_screen_166"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,55 +12,55 @@
         android:padding="24dp">
 
         <ImageView
-            android:id="@+id/ivLogoReg159"
+            android:id="@+id/ivLogoReg166"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginTop="36dp"
-            android:contentDescription="@string/register_title_159"
-            android:src="@drawable/ic_book_159"
+            android:contentDescription="@string/register_title_166"
+            android:src="@drawable/ic_book_166"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvRegTitle159"
+            android:id="@+id/tvRegTitle166"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="sans-serif-black"
-            android:text="@string/register_title_159"
-            android:textColor="@color/text_primary_159"
+            android:text="@string/register_title_166"
+            android:textColor="@color/text_primary_166"
             android:textSize="26sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivLogoReg159" />
+            app:layout_constraintTop_toBottomOf="@id/ivLogoReg166" />
 
         <TextView
-            android:id="@+id/tvRegSubtitle159"
+            android:id="@+id/tvRegSubtitle166"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="sans-serif"
             android:gravity="center"
-            android:text="@string/register_subtitle_159"
-            android:textColor="@color/text_secondary_159"
+            android:text="@string/register_subtitle_166"
+            android:textColor="@color/text_secondary_166"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvRegTitle159" />
+            app:layout_constraintTop_toBottomOf="@id/tvRegTitle166" />
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardRegister159"
+            android:id="@+id/cardRegister166"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            app:cardBackgroundColor="@color/surface_card_159"
+            app:cardBackgroundColor="@color/surface_card_166"
             app:cardCornerRadius="20dp"
             app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvRegSubtitle159"
-            app:strokeColor="@color/stroke_subtle_159"
+            app:layout_constraintTop_toBottomOf="@id/tvRegSubtitle166"
+            app:strokeColor="@color/stroke_subtle_166"
             app:strokeWidth="1dp">
 
             <LinearLayout
@@ -71,73 +71,73 @@
 
                 <!-- Username Input -->
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilRegUsername159"
-                    style="@style/Widget.TamuIn159.TextInputLayout"
+                    android:id="@+id/tilRegUsername166"
+                    style="@style/Widget.TamuIn166.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/username_label_159"
-                    app:startIconDrawable="@drawable/ic_person_159">
+                    android:hint="@string/username_label_166"
+                    app:startIconDrawable="@drawable/ic_person_166">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etRegUsername159"
+                        android:id="@+id/etRegUsername166"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:maxLines="1"
-                        android:textColor="@color/text_primary_159" />
+                        android:textColor="@color/text_primary_166" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Password Input -->
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilRegPassword159"
-                    style="@style/Widget.TamuIn159.TextInputLayout"
+                    android:id="@+id/tilRegPassword166"
+                    style="@style/Widget.TamuIn166.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:hint="@string/password_label_159"
+                    android:hint="@string/password_label_166"
                     app:endIconMode="password_toggle"
                     app:helperText="Minimal 6 karakter"
-                    app:startIconDrawable="@drawable/ic_lock_159">
+                    app:startIconDrawable="@drawable/ic_lock_166">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etRegPassword159"
+                        android:id="@+id/etRegPassword166"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:textColor="@color/text_primary_159" />
+                        android:textColor="@color/text_primary_166" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Confirm Password Input -->
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilRegConfirmPassword159"
-                    style="@style/Widget.TamuIn159.TextInputLayout"
+                    android:id="@+id/tilRegConfirmPassword166"
+                    style="@style/Widget.TamuIn166.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:hint="@string/confirm_password_label_159"
+                    android:hint="@string/confirm_password_label_166"
                     app:endIconMode="password_toggle"
-                    app:startIconDrawable="@drawable/ic_lock_159">
+                    app:startIconDrawable="@drawable/ic_lock_166">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etRegConfirmPassword159"
+                        android:id="@+id/etRegConfirmPassword166"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:textColor="@color/text_primary_159" />
+                        android:textColor="@color/text_primary_166" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Register Button -->
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnRegister159"
-                    style="@style/Widget.TamuIn159.Button"
+                    android:id="@+id/btnRegister166"
+                    style="@style/Widget.TamuIn166.Button"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
                     android:layout_marginTop="24dp"
-                    android:backgroundTint="@color/accent_blue_159"
-                    android:text="@string/btn_register_159"
-                    android:textColor="@color/white_159"
+                    android:backgroundTint="@color/accent_blue_166"
+                    android:text="@string/btn_register_166"
+                    android:textColor="@color/white_166"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -145,7 +145,7 @@
 
         <!-- Back to Login Link -->
         <TextView
-            android:id="@+id/tvBackToLogin159"
+            android:id="@+id/tvBackToLogin166"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
@@ -154,13 +154,13 @@
             android:focusable="true"
             android:fontFamily="sans-serif-medium"
             android:padding="8dp"
-            android:text="@string/have_account_prompt_159"
-            android:textColor="@color/accent_blue_159"
+            android:text="@string/have_account_prompt_166"
+            android:textColor="@color/accent_blue_166"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardRegister159" />
+            app:layout_constraintTop_toBottomOf="@id/cardRegister166" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

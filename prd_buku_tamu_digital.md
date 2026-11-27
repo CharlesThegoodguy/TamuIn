@@ -7,7 +7,7 @@
 | **Batas Pengumpulan** | 9 November 2026 |
 | **Platform** | Android (Native - Kotlin) |
 | **Status Dokumen** | Final MVP Specification |
-| **Aturan Penamaan (NIM)** | Menggunakan akhiran `_159` (Ganti `159` dengan 3 digit NIM terakhir Anda) |
+| **Aturan Penamaan (NIM)** | Menggunakan akhiran `_166` (Ganti `166` dengan 3 digit NIM terakhir Anda) |
 
 ---
 
@@ -25,10 +25,10 @@ Pengembangan Minimum Viable Product (MVP) ini ditujukan untuk memenuhi 100% krit
 
 | Komponen Penilaian | Bobot | Implementasi pada Aplikasi |
 | :--- | :--- | :--- |
-| **Autentikasi & Session** | 30% | Registrasi & Login menggunakan query Room Database, penyimpanan sesi `user_id_159` di `SharedPreferences`, serta fitur Logout. |
-| **Room Database (CRUD)** | 30% | Implementasi `UserEntity159`, `GuestEntity159`, DAO, dan `AppDatabase159`. Operasi Create, Read, Update, Delete berjalan penuh dengan waktu otomatis `System.currentTimeMillis()` dan rekap harian. |
+| **Autentikasi & Session** | 30% | Registrasi & Login menggunakan query Room Database, penyimpanan sesi `user_id_166` di `SharedPreferences`, serta fitur Logout. |
+| **Room Database (CRUD)** | 30% | Implementasi `UserEntity166`, `GuestEntity166`, DAO, dan `AppDatabase166`. Operasi Create, Read, Update, Delete berjalan penuh dengan waktu otomatis `System.currentTimeMillis()` dan rekap harian. |
 | **UI & RecyclerView** | 15% | Struktur navigasi terarah, penggunaan `RecyclerView` untuk daftar tamu, serta Activity/Fragment terpisah untuk formulir input/edit. |
-| **Data Integrity & Validation** | 15% | Pemisahan data antar pengguna menggunakan *foreign key* `user_id_159`. Validasi input kosong, kata sandi minimal 6 karakter, dan *username* unik. |
+| **Data Integrity & Validation** | 15% | Pemisahan data antar pengguna menggunakan *foreign key* `user_id_166`. Validasi input kosong, kata sandi minimal 6 karakter, dan *username* unik. |
 | **Fitur Bonus** | Maks 10% | Implementasi **ViewBinding** di seluruh halaman dan fitur **Search Bar** untuk mencari tamu secara *real-time*. |
 
 ---
@@ -44,105 +44,105 @@ Pengembangan Minimum Viable Product (MVP) ini ditujukan untuk memenuhi 100% krit
 
 ### 3.2. Aturan Wajib Penamaan Variabel & Tabel (3 Digit NIM)
 Sesuai ketentuan pengerjaan UTS, **seluruh variabel dan nama tabel hasil modifikasi (non-Kotlin core) wajib menyertakan 3 digit NIM** sebagai pembeda:
-* **Nama Tabel**: `tabel_user_159`, `tabel_guest_159`
-* **Nama Kolom & Variabel Entitas**: `id_159`, `username_159`, `password_159`, `user_id_159`, `nama_159`, `alamat_159`, `keperluan_159`, `timestamp_159`
-* **Nama Variabel Lokal/Fungsi**: `daftarTamu159`, `totalHarian159`, `simpanTamu159()`, dll.
+* **Nama Tabel**: `tabel_user_166`, `tabel_guest_166`
+* **Nama Kolom & Variabel Entitas**: `id_166`, `username_166`, `password_166`, `user_id_166`, `nama_166`, `alamat_166`, `keperluan_166`, `timestamp_166`
+* **Nama Variabel Lokal/Fungsi**: `daftarTamu166`, `totalHarian166`, `simpanTamu166()`, dll.
 
 ---
 
 ## 4. Kebutuhan Fungsional (Functional Requirements) & User Stories
 
 ### 4.1. Modul Autentikasi & Manajemen Sesi
-* **FR-AUTH-01 (Registrasi Akun)**: Pengguna baru dapat mendaftarkan akun dengan mengisi `username_159` dan `password_159`.
-* **FR-AUTH-02 (Validasi Registrasi)**: Sistem menolak registrasi jika ada kolom kosong, jika `username_159` sudah terdaftar di database, atau jika `password_159` kurang dari 6 karakter.
+* **FR-AUTH-01 (Registrasi Akun)**: Pengguna baru dapat mendaftarkan akun dengan mengisi `username_166` dan `password_166`.
+* **FR-AUTH-02 (Validasi Registrasi)**: Sistem menolak registrasi jika ada kolom kosong, jika `username_166` sudah terdaftar di database, atau jika `password_166` kurang dari 6 karakter.
 * **FR-AUTH-03 (Login Pengguna)**: Pengguna dapat masuk menggunakan kredensial yang terdaftar. Sistem memverifikasi kecocokan data melalui query ke Room Database.
-* **FR-AUTH-04 (Penyimpanan Sesi)**: Saat login berhasil, sistem menyimpan `id_159` (sebagai `user_id_159`) dan `username_159` ke dalam `SharedPreferences` agar pengguna tidak perlu login ulang saat aplikasi ditutup dan dibuka kembali.
+* **FR-AUTH-04 (Penyimpanan Sesi)**: Saat login berhasil, sistem menyimpan `id_166` (sebagai `user_id_166`) dan `username_166` ke dalam `SharedPreferences` agar pengguna tidak perlu login ulang saat aplikasi ditutup dan dibuka kembali.
 * **FR-AUTH-05 (Logout)**: Pengguna dapat keluar dari akun melalui tombol Logout di Dashboard, yang akan menghapus data sesi di `SharedPreferences` dan mengarahkan kembali ke layar Login.
 
 ### 4.2. Modul Dashboard & Rekapitulasi Tamu Harian
-* **FR-DASH-01 (Informasi Pengguna Aktif)**: Menampilkan sapaan atau identitas `username_159` yang sedang login.
-* **FR-DASH-02 (Rekapitulasi Jumlah Tamu Harian)**: Menampilkan total jumlah tamu yang berkunjung pada hari ini (pukul `00:00:00` hingga `23:59:59` di hari berjalan) khusus untuk `user_id_159` yang sedang aktif.
-* **FR-DASH-03 (Isolasi Data)**: Pengguna hanya dapat melihat rekapitulasi dan daftar tamu yang memiliki `user_id_159` sesuai dengan sesi loginnya.
+* **FR-DASH-01 (Informasi Pengguna Aktif)**: Menampilkan sapaan atau identitas `username_166` yang sedang login.
+* **FR-DASH-02 (Rekapitulasi Jumlah Tamu Harian)**: Menampilkan total jumlah tamu yang berkunjung pada hari ini (pukul `00:00:00` hingga `23:59:59` di hari berjalan) khusus untuk `user_id_166` yang sedang aktif.
+* **FR-DASH-03 (Isolasi Data)**: Pengguna hanya dapat melihat rekapitulasi dan daftar tamu yang memiliki `user_id_166` sesuai dengan sesi loginnya.
 
 ### 4.3. Modul Daftar Data & Pencarian (RecyclerView & Bonus Search)
-* **FR-LIST-01 (Tampilan Daftar Tamu)**: Menampilkan daftar seluruh tamu milik pengguna aktif menggunakan komponen `RecyclerView`, diurutkan dari waktu kunjungan terbaru (`timestamp_159 DESC`).
-* **FR-LIST-02 (Format Waktu Terbaca)**: Nilai `timestamp_159` (tipe `Long`) dikonversi menjadi format tanggal dan waktu yang mudah dibaca pada kartu item (contoh: `09 Nov 2026, 14:30 WIB`).
-* **FR-LIST-03 (Pencarian Tamu - Bonus)**: Pengguna dapat mengetik kata kunci pada *Search Bar* untuk memfilter daftar tamu secara langsung berdasarkan `nama_159`, `alamat_159`, atau `keperluan_159`.
+* **FR-LIST-01 (Tampilan Daftar Tamu)**: Menampilkan daftar seluruh tamu milik pengguna aktif menggunakan komponen `RecyclerView`, diurutkan dari waktu kunjungan terbaru (`timestamp_166 DESC`).
+* **FR-LIST-02 (Format Waktu Terbaca)**: Nilai `timestamp_166` (tipe `Long`) dikonversi menjadi format tanggal dan waktu yang mudah dibaca pada kartu item (contoh: `09 Nov 2026, 14:30 WIB`).
+* **FR-LIST-03 (Pencarian Tamu - Bonus)**: Pengguna dapat mengetik kata kunci pada *Search Bar* untuk memfilter daftar tamu secara langsung berdasarkan `nama_166`, `alamat_166`, atau `keperluan_166`.
 
 ### 4.4. Modul CRUD Buku Tamu (Tambah, Edit, Hapus)
-* **FR-CRUD-01 (Tambah Tamu Baru)**: Pengguna mengisi formulir yang terdiri dari `nama_159`, `alamat_159`, dan `keperluan_159`.
-* **FR-CRUD-02 (Pencatatan Waktu Otomatis)**: Saat data tamu baru disimpan, sistem secara otomatis mengisi nilai `timestamp_159` menggunakan fungsi `System.currentTimeMillis()` tanpa perlu diinput manual oleh pengguna.
-* **FR-CRUD-03 (Edit Data Tamu)**: Saat salah satu item tamu pada `RecyclerView` ditekan, pengguna diarahkan ke formulir Edit yang sudah terisi data sebelumnya. Pengguna dapat memperbarui `nama_159`, `alamat_159`, dan `keperluan_159`.
+* **FR-CRUD-01 (Tambah Tamu Baru)**: Pengguna mengisi formulir yang terdiri dari `nama_166`, `alamat_166`, dan `keperluan_166`.
+* **FR-CRUD-02 (Pencatatan Waktu Otomatis)**: Saat data tamu baru disimpan, sistem secara otomatis mengisi nilai `timestamp_166` menggunakan fungsi `System.currentTimeMillis()` tanpa perlu diinput manual oleh pengguna.
+* **FR-CRUD-03 (Edit Data Tamu)**: Saat salah satu item tamu pada `RecyclerView` ditekan, pengguna diarahkan ke formulir Edit yang sudah terisi data sebelumnya. Pengguna dapat memperbarui `nama_166`, `alamat_166`, dan `keperluan_166`.
 * **FR-CRUD-04 (Hapus Data Tamu)**: Pengguna dapat menghapus data tamu melalui tombol Hapus (baik di dalam halaman Edit maupun pada item daftar) disertai dialog konfirmasi penghapusan.
 
 ---
 
 ## 5. Desain Database (Room Persistence Library)
 
-### 5.1. Skema Tabel 1: `tabel_user_159` (Entity: `UserEntity159`)
+### 5.1. Skema Tabel 1: `tabel_user_166` (Entity: `UserEntity166`)
 
 | Nama Kolom | Tipe Data | Constraint | Deskripsi |
 | :--- | :--- | :--- | :--- |
-| `id_159` | `Int` | `PRIMARY KEY (autoGenerate = true)` | ID unik untuk setiap pengguna. |
-| `username_159` | `String` | `NOT NULL`, `UNIQUE INDEX` | Nama pengguna unik untuk autentikasi. |
-| `password_159` | `String` | `NOT NULL` | Kata sandi pengguna (minimal 6 karakter). |
+| `id_166` | `Int` | `PRIMARY KEY (autoGenerate = true)` | ID unik untuk setiap pengguna. |
+| `username_166` | `String` | `NOT NULL`, `UNIQUE INDEX` | Nama pengguna unik untuk autentikasi. |
+| `password_166` | `String` | `NOT NULL` | Kata sandi pengguna (minimal 6 karakter). |
 
-### 5.2. Skema Tabel 2: `tabel_guest_159` (Entity: `GuestEntity159`)
+### 5.2. Skema Tabel 2: `tabel_guest_166` (Entity: `GuestEntity166`)
 
 | Nama Kolom | Tipe Data | Constraint | Deskripsi |
 | :--- | :--- | :--- | :--- |
-| `id_159` | `Int` | `PRIMARY KEY (autoGenerate = true)` | ID unik untuk setiap data kunjungan tamu. |
-| `user_id_159` | `Int` | `FOREIGN KEY (tabel_user_159.id_159)` | Kunci tamu merujuk ke pemilik akun (`ON DELETE CASCADE`). |
-| `nama_159` | `String` | `NOT NULL` | Nama lengkap tamu yang berkunjung. |
-| `alamat_159` | `String` | `NOT NULL` | Alamat domisili atau instansi asal tamu. |
-| `keperluan_159` | `String` | `NOT NULL` | Tujuan atau keperluan kunjungan. |
-| `timestamp_159` | `Long` | `NOT NULL` | Waktu pencatatan otomatis (`System.currentTimeMillis()`). |
+| `id_166` | `Int` | `PRIMARY KEY (autoGenerate = true)` | ID unik untuk setiap data kunjungan tamu. |
+| `user_id_166` | `Int` | `FOREIGN KEY (tabel_user_166.id_166)` | Kunci tamu merujuk ke pemilik akun (`ON DELETE CASCADE`). |
+| `nama_166` | `String` | `NOT NULL` | Nama lengkap tamu yang berkunjung. |
+| `alamat_166` | `String` | `NOT NULL` | Alamat domisili atau instansi asal tamu. |
+| `keperluan_166` | `String` | `NOT NULL` | Tujuan atau keperluan kunjungan. |
+| `timestamp_166` | `Long` | `NOT NULL` | Waktu pencatatan otomatis (`System.currentTimeMillis()`). |
 
 ### 5.3. Rancangan Query DAO (Data Access Object)
 
-#### A. `UserDao159`
+#### A. `UserDao166`
 ```kotlin
 @Dao
-interface UserDao159 {
+interface UserDao166 {
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    suspend fun registerUser159(user159: UserEntity159): Long
+    suspend fun registerUser166(user166: UserEntity166): Long
 
-    @Query("SELECT * FROM tabel_user_159 WHERE username_159 = :username159 LIMIT 1")
-    suspend fun checkUsernameExists159(username159: String): UserEntity159?
+    @Query("SELECT * FROM tabel_user_166 WHERE username_166 = :username166 LIMIT 1")
+    suspend fun checkUsernameExists166(username166: String): UserEntity166?
 
-    @Query("SELECT * FROM tabel_user_159 WHERE username_159 = :username159 AND password_159 = :password159 LIMIT 1")
-    suspend fun loginUser159(username159: String, password159: String): UserEntity159?
+    @Query("SELECT * FROM tabel_user_166 WHERE username_166 = :username166 AND password_166 = :password166 LIMIT 1")
+    suspend fun loginUser166(username166: String, password166: String): UserEntity166?
 }
 ```
 
-#### B. `GuestDao159`
+#### B. `GuestDao166`
 ```kotlin
 @Dao
-interface GuestDao159 {
+interface GuestDao166 {
     @Insert
-    suspend fun insertGuest159(guest159: GuestEntity159)
+    suspend fun insertGuest166(guest166: GuestEntity166)
 
     @Update
-    suspend fun updateGuest159(guest159: GuestEntity159)
+    suspend fun updateGuest166(guest166: GuestEntity166)
 
     @Delete
-    suspend fun deleteGuest159(guest159: GuestEntity159)
+    suspend fun deleteGuest166(guest166: GuestEntity166)
 
-    @Query("SELECT * FROM tabel_guest_159 WHERE user_id_159 = :userId159 ORDER BY timestamp_159 DESC")
-    fun getAllGuestsByUser159(userId159: Int): Flow<List<GuestEntity159>>
+    @Query("SELECT * FROM tabel_guest_166 WHERE user_id_166 = :userId166 ORDER BY timestamp_166 DESC")
+    fun getAllGuestsByUser166(userId166: Int): Flow<List<GuestEntity166>>
 
-    @Query("SELECT COUNT(*) FROM tabel_guest_159 WHERE user_id_159 = :userId159 AND timestamp_159 BETWEEN :startOfDay159 AND :endOfDay159")
-    fun getDailyGuestCount159(userId159: Int, startOfDay159: Long, endOfDay159: Long): Flow<Int>
+    @Query("SELECT COUNT(*) FROM tabel_guest_166 WHERE user_id_166 = :userId166 AND timestamp_166 BETWEEN :startOfDay166 AND :endOfDay166")
+    fun getDailyGuestCount166(userId166: Int, startOfDay166: Long, endOfDay166: Long): Flow<Int>
 
     @Query("""
-        SELECT * FROM tabel_guest_159 
-        WHERE user_id_159 = :userId159 
-        AND (nama_159 LIKE '%' || :keyword159 || '%' 
-             OR alamat_159 LIKE '%' || :keyword159 || '%' 
-             OR keperluan_159 LIKE '%' || :keyword159 || '%') 
-        ORDER BY timestamp_159 DESC
+        SELECT * FROM tabel_guest_166 
+        WHERE user_id_166 = :userId166 
+        AND (nama_166 LIKE '%' || :keyword166 || '%' 
+             OR alamat_166 LIKE '%' || :keyword166 || '%' 
+             OR keperluan_166 LIKE '%' || :keyword166 || '%') 
+        ORDER BY timestamp_166 DESC
     """)
-    fun searchGuestsByUser159(userId159: Int, keyword159: String): Flow<List<GuestEntity159>>
+    fun searchGuestsByUser166(userId166: Int, keyword166: String): Flow<List<GuestEntity166>>
 }
 ```
 
@@ -153,50 +153,50 @@ interface GuestDao159 {
 Alur navigasi utama mengikuti ketentuan:
 **Login -> Dashboard -> List Data (RecyclerView) -> Form Tambah -> Edit/Hapus**
 
-### 6.1. Layar 1: Halaman Login (`LoginActivity159`)
-* **Kondisi Awal**: Mengecek `SessionManager159` (`SharedPreferences`). Jika `user_id_159 != -1`, langsung berpindah ke `DashboardActivity159` dan menutup `LoginActivity159`.
+### 6.1. Layar 1: Halaman Login (`LoginActivity166`)
+* **Kondisi Awal**: Mengecek `SessionManager166` (`SharedPreferences`). Jika `user_id_166 != -1`, langsung berpindah ke `DashboardActivity166` dan menutup `LoginActivity166`.
 * **Komponen UI**:
-  * `TextInputEditText` untuk `etUsername159`
-  * `TextInputEditText` untuk `etPassword159` (inputType `textPassword`)
-  * `MaterialButton` `btnLogin159` ("Masuk")
-  * `TextView` `tvGoToRegister159` ("Belum punya akun? Daftar di sini")
+  * `TextInputEditText` untuk `etUsername166`
+  * `TextInputEditText` untuk `etPassword166` (inputType `textPassword`)
+  * `MaterialButton` `btnLogin166` ("Masuk")
+  * `TextView` `tvGoToRegister166` ("Belum punya akun? Daftar di sini")
 
-### 6.2. Layar 2: Halaman Registrasi (`RegisterActivity159`)
+### 6.2. Layar 2: Halaman Registrasi (`RegisterActivity166`)
 * **Komponen UI**:
-  * `TextInputEditText` untuk `etRegUsername159`
-  * `TextInputEditText` untuk `etRegPassword159`
-  * `TextInputEditText` untuk `etRegConfirmPassword159`
-  * `MaterialButton` `btnRegister159` ("Daftar Akun")
-  * `TextView` `tvBackToLogin159` ("Sudah punya akun? Masuk")
-* **Aksi**: Jika validasi lolos dan data tersimpan di Room, tampilkan `Toast` "Registrasi berhasil, silakan login" dan arahkan kembali ke `LoginActivity159`.
+  * `TextInputEditText` untuk `etRegUsername166`
+  * `TextInputEditText` untuk `etRegPassword166`
+  * `TextInputEditText` untuk `etRegConfirmPassword166`
+  * `MaterialButton` `btnRegister166` ("Daftar Akun")
+  * `TextView` `tvBackToLogin166` ("Sudah punya akun? Masuk")
+* **Aksi**: Jika validasi lolos dan data tersimpan di Room, tampilkan `Toast` "Registrasi berhasil, silakan login" dan arahkan kembali ke `LoginActivity166`.
 
-### 6.3. Layar 3: Dashboard & Daftar Tamu (`DashboardActivity159`)
+### 6.3. Layar 3: Dashboard & Daftar Tamu (`DashboardActivity166`)
 Halaman ini menggabungkan ringkasan Dashboard dengan Daftar Data (`RecyclerView`) untuk pengalaman pengguna yang efisien (atau dapat dipisah menjadi Fragment/Activity sesuai kebutuhan).
 * **Komponen UI Bagian Atas (Header & Kartu Rekap)**:
-  * `TextView` `tvWelcomeUser159` ("Halo, [username_159]")
-  * `ImageButton` / `MaterialButton` `btnLogout159` ("Keluar")
+  * `TextView` `tvWelcomeUser166` ("Halo, [username_166]")
+  * `ImageButton` / `MaterialButton` `btnLogout166` ("Keluar")
   * `CardView` Rekap Harian yang menampilkan:
     * Label: "Total Tamu Hari Ini"
     * Tanggal Hari Ini (contoh: "Senin, 9 Nov 2026")
-    * `TextView` `tvTotalHarian159` (Angka besar jumlah tamu hari ini, misal: `12 Orang`)
-  * `CardView` / Informasi tambahan: Total keseluruhan tamu (`tvTotalSemua159`).
+    * `TextView` `tvTotalHarian166` (Angka besar jumlah tamu hari ini, misal: `12 Orang`)
+  * `CardView` / Informasi tambahan: Total keseluruhan tamu (`tvTotalSemua166`).
 * **Komponen UI Bagian Tengah (Pencarian & Daftar Tamu)**:
-  * `SearchView` / `EditText` `svCariTamu159` ("Cari nama, alamat, atau keperluan...")
-  * `RecyclerView` `rvGuestList159` (Menampilkan daftar `item_guest_159.xml`)
-  * `TextView` `tvEmptyState159` ("Belum ada data tamu tercatat" - tampil jika list kosong)
+  * `SearchView` / `EditText` `svCariTamu166` ("Cari nama, alamat, atau keperluan...")
+  * `RecyclerView` `rvGuestList166` (Menampilkan daftar `item_guest_166.xml`)
+  * `TextView` `tvEmptyState166` ("Belum ada data tamu tercatat" - tampil jika list kosong)
 * **Komponen UI Bagian Bawah**:
-  * `FloatingActionButton` `fabAddGuest159` ("+ Tambah Tamu")
+  * `FloatingActionButton` `fabAddGuest166` ("+ Tambah Tamu")
 
-### 6.4. Layar 4: Formulir Tambah / Edit Tamu (`GuestFormActivity159`)
-Halaman ini menangani mode **Tambah** (jika dipanggil dari `fabAddGuest159`) dan mode **Edit/Hapus** (jika dipanggil dari klik item `RecyclerView`).
+### 6.4. Layar 4: Formulir Tambah / Edit Tamu (`GuestFormActivity166`)
+Halaman ini menangani mode **Tambah** (jika dipanggil dari `fabAddGuest166`) dan mode **Edit/Hapus** (jika dipanggil dari klik item `RecyclerView`).
 * **Komponen UI**:
   * `Toolbar` dengan judul dinamis ("Tambah Tamu Baru" atau "Edit Data Tamu")
-  * `TextInputEditText` `etNamaTamu159` (Nama Lengkap Tamu)
-  * `TextInputEditText` `etAlamatTamu159` (Alamat / Instansi)
-  * `TextInputEditText` `etKeperluanTamu159` (Keperluan Kunjungan - *multiline*)
-  * `TextView` `tvInfoWaktu159` (Pada mode Tambah: "Waktu kunjungan dicatat otomatis saat disimpan". Pada mode Edit: Menampilkan waktu kunjungan asli yang telah tercatat).
-  * `MaterialButton` `btnSaveGuest159` ("Simpan Data")
-  * `MaterialButton` `btnDeleteGuest159` ("Hapus Tamu" - hanya tampil/aktif saat berada di **Mode Edit**).
+  * `TextInputEditText` `etNamaTamu166` (Nama Lengkap Tamu)
+  * `TextInputEditText` `etAlamatTamu166` (Alamat / Instansi)
+  * `TextInputEditText` `etKeperluanTamu166` (Keperluan Kunjungan - *multiline*)
+  * `TextView` `tvInfoWaktu166` (Pada mode Tambah: "Waktu kunjungan dicatat otomatis saat disimpan". Pada mode Edit: Menampilkan waktu kunjungan asli yang telah tercatat).
+  * `MaterialButton` `btnSaveGuest166` ("Simpan Data")
+  * `MaterialButton` `btnDeleteGuest166` ("Hapus Tamu" - hanya tampil/aktif saat berada di **Mode Edit**).
 
 ---
 
@@ -214,42 +214,42 @@ Halaman ini menangani mode **Tambah** (jika dipanggil dari `fabAddGuest159`) dan
 
 ### 7.2. Logika Perhitungan Waktu & Rekap Harian
 1. **Pencatatan Waktu Otomatis**:
-   * Saat membuat objek `GuestEntity159` baru:
-     `val waktuSekarang159 = System.currentTimeMillis()`
-   * Saat melakukan **Edit** data tamu, nilai `timestamp_159` lama tetap dipertahankan agar riwayat waktu kedatangan asli tidak berubah (atau dapat diperbarui sesuai kebijakan kelompok).
+   * Saat membuat objek `GuestEntity166` baru:
+     `val waktuSekarang166 = System.currentTimeMillis()`
+   * Saat melakukan **Edit** data tamu, nilai `timestamp_166` lama tetap dipertahankan agar riwayat waktu kedatangan asli tidak berubah (atau dapat diperbarui sesuai kebijakan kelompok).
 2. **Rentang Waktu Rekapitulasi Harian**:
-   Untuk menghitung jumlah tamu pada hari berjalan di `getDailyGuestCount159(userId159, startOfDay159, endOfDay159)`:
-   * `startOfDay159`: Objek `Calendar` disetel ke hari ini pada jam `00`, menit `00`, detik `00`, milidetik `000` (`timeInMillis`).
-   * `endOfDay159`: Objek `Calendar` disetel ke hari ini pada jam `23`, menit `59`, detik `59`, milidetik `999` (`timeInMillis`).
+   Untuk menghitung jumlah tamu pada hari berjalan di `getDailyGuestCount166(userId166, startOfDay166, endOfDay166)`:
+   * `startOfDay166`: Objek `Calendar` disetel ke hari ini pada jam `00`, menit `00`, detik `00`, milidetik `000` (`timeInMillis`).
+   * `endOfDay166`: Objek `Calendar` disetel ke hari ini pada jam `23`, menit `59`, detik `59`, milidetik `999` (`timeInMillis`).
 
 ---
 
 ## 8. Rekomendasi Struktur Paket (Package Structure)
 
 ```text
-com.kelompok3.bukutamudigital159/
+com.kelompok3.bukutamudigital166/
 ├── data/
 │   ├── local/
 │   │   ├── entity/
-│   │   │   ├── UserEntity159.kt
-│   │   │   └── GuestEntity159.kt
+│   │   │   ├── UserEntity166.kt
+│   │   │   └── GuestEntity166.kt
 │   │   ├── dao/
-│   │   │   ├── UserDao159.kt
-│   │   │   └── GuestDao159.kt
-│   │   └── AppDatabase159.kt
+│   │   │   ├── UserDao166.kt
+│   │   │   └── GuestDao166.kt
+│   │   └── AppDatabase166.kt
 │   └── pref/
-│       └── SessionManager159.kt
+│       └── SessionManager166.kt
 ├── ui/
 │   ├── auth/
-│   │   ├── LoginActivity159.kt
-│   │   └── RegisterActivity159.kt
+│   │   ├── LoginActivity166.kt
+│   │   └── RegisterActivity166.kt
 │   ├── dashboard/
-│   │   ├── DashboardActivity159.kt
-│   │   └── GuestAdapter159.kt
+│   │   ├── DashboardActivity166.kt
+│   │   └── GuestAdapter166.kt
 │   └── form/
-│       └── GuestFormActivity159.kt
+│       └── GuestFormActivity166.kt
 └── utils/
-    └── DateHelper159.kt
+    └── DateHelper166.kt
 ```
 
 ---
@@ -268,4 +268,4 @@ Sebelum dikumpulkan pada **9 November 2026**, pastikan seluruh skenario pengujia
   2. Logout, lalu daftar dan login sebagai **User B**.
   3. Pastikan daftar tamu **User B** kosong (`0` tamu hari ini) dan data milik **User A** tidak terlihat sama sekali.
 - [ ] **TC-07 (Fitur Bonus Search & ViewBinding)**: Mengetik nama tamu di kolom pencarian memfilter `RecyclerView` dengan benar, dan seluruh `Activity` maupun `Adapter` telah menggunakan `ViewBinding` (tanpa `findViewById`).
-- [ ] **TC-08 (Kepatuhan Aturan 3 Digit NIM)**: Memeriksa seluruh file `.kt` untuk memastikan nama tabel dan variabel hasil modifikasi telah menggunakan akhiran `_159`.
+- [ ] **TC-08 (Kepatuhan Aturan 3 Digit NIM)**: Memeriksa seluruh file `.kt` untuk memastikan nama tabel dan variabel hasil modifikasi telah menggunakan akhiran `_166`.

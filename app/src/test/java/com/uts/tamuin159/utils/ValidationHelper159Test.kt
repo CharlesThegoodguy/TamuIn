@@ -1,36 +1,36 @@
-package com.uts.tamuin159.utils
+package com.uts.tamuin166.utils
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
-class ValidationHelper159Test {
+class ValidationHelper166Test {
 
     @Test
-    fun testUsernameValidation159() {
-        assertTrue(ValidationHelper159.isValidUsername159("admin159"))
-        assertFalse(ValidationHelper159.isValidUsername159(""))
-        assertFalse(ValidationHelper159.isValidUsername159("   "))
+    fun testUsernameValidation166() {
+        assertTrue(ValidationHelper166.isValidUsername166("admin166"))
+        assertFalse(ValidationHelper166.isValidUsername166(""))
+        assertFalse(ValidationHelper166.isValidUsername166("   "))
     }
 
     @Test
-    fun testPasswordValidation159() {
-        assertTrue(ValidationHelper159.isValidPassword159("123456"))
-        assertTrue(ValidationHelper159.isValidPassword159("secretPass159"))
-        assertFalse(ValidationHelper159.isValidPassword159("12345"))
-        assertFalse(ValidationHelper159.isValidPassword159(""))
+    fun testPasswordValidation166() {
+        assertTrue(ValidationHelper166.isValidPassword166("123456"))
+        assertTrue(ValidationHelper166.isValidPassword166("secretPass166"))
+        assertFalse(ValidationHelper166.isValidPassword166("12345"))
+        assertFalse(ValidationHelper166.isValidPassword166(""))
     }
 
     @Test
-    fun testPasswordsMatch159() {
-        assertTrue(ValidationHelper159.doPasswordsMatch159("rahasia159", "rahasia159"))
-        assertFalse(ValidationHelper159.doPasswordsMatch159("rahasia159", "beda159"))
+    fun testPasswordsMatch166() {
+        assertTrue(ValidationHelper166.doPasswordsMatch166("rahasia166", "rahasia166"))
+        assertFalse(ValidationHelper166.doPasswordsMatch166("rahasia166", "beda166"))
     }
 
     @Test
-    fun testGuestFieldValidation159() {
-        assertTrue(ValidationHelper159.isValidGuestField159("Budi Pratama"))
-        assertFalse(ValidationHelper159.isValidGuestField159(""))
-        assertFalse(ValidationHelper159.isValidGuestField159("   "))
+    fun testGuestFieldValidation166() {
+        assertTrue(ValidationHelper166.isValidGuestField166("Budi Pratama"))
+        assertFalse(ValidationHelper166.isValidGuestField166(""))
+        assertFalse(ValidationHelper166.isValidGuestField166("   "))
     }
 }

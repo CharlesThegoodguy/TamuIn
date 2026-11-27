@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.uts.tamuin159"
+    namespace = "com.uts.tamuin166"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.uts.tamuin159"
+        applicationId = "com.uts.tamuin166"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

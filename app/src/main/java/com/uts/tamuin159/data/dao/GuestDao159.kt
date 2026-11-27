@@ -1,58 +1,58 @@
-package com.uts.tamuin159.data.dao
+package com.uts.tamuin166.data.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.uts.tamuin159.data.entity.GuestEntity159
+import com.uts.tamuin166.data.entity.GuestEntity166
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface GuestDao159 {
+interface GuestDao166 {
 
     @Insert
-    suspend fun insertGuest159(guest159: GuestEntity159)
+    suspend fun insertGuest166(guest166: GuestEntity166)
 
     @Update
-    suspend fun updateGuest159(guest159: GuestEntity159)
+    suspend fun updateGuest166(guest166: GuestEntity166)
 
     @Delete
-    suspend fun deleteGuest159(guest159: GuestEntity159)
+    suspend fun deleteGuest166(guest166: GuestEntity166)
 
-    @Query("SELECT * FROM tabel_guest_159 WHERE id_159 = :guestId159 AND user_id_159 = :userId159 LIMIT 1")
-    suspend fun getGuestById159(guestId159: Int, userId159: Int): GuestEntity159?
+    @Query("SELECT * FROM tabel_guest_166 WHERE id_166 = :guestId166 AND user_id_166 = :userId166 LIMIT 1")
+    suspend fun getGuestById166(guestId166: Int, userId166: Int): GuestEntity166?
 
-    @Query("SELECT * FROM tabel_guest_159 WHERE user_id_159 = :userId159 ORDER BY timestamp_159 DESC")
-    fun getGuestsByUser159(userId159: Int): Flow<List<GuestEntity159>>
+    @Query("SELECT * FROM tabel_guest_166 WHERE user_id_166 = :userId166 ORDER BY timestamp_166 DESC")
+    fun getGuestsByUser166(userId166: Int): Flow<List<GuestEntity166>>
 
-    @Query("SELECT * FROM tabel_guest_159 WHERE user_id_159 = :userId159 ORDER BY timestamp_159 DESC")
-    fun getAllGuestsByUser159(userId159: Int): Flow<List<GuestEntity159>>
+    @Query("SELECT * FROM tabel_guest_166 WHERE user_id_166 = :userId166 ORDER BY timestamp_166 DESC")
+    fun getAllGuestsByUser166(userId166: Int): Flow<List<GuestEntity166>>
 
-    @Query("SELECT COUNT(*) FROM tabel_guest_159 WHERE user_id_159 = :userId159 AND timestamp_159 BETWEEN :startOfDay159 AND :endOfDay159")
-    fun getDailyGuestCount159(userId159: Int, startOfDay159: Long, endOfDay159: Long): Flow<Int>
+    @Query("SELECT COUNT(*) FROM tabel_guest_166 WHERE user_id_166 = :userId166 AND timestamp_166 BETWEEN :startOfDay166 AND :endOfDay166")
+    fun getDailyGuestCount166(userId166: Int, startOfDay166: Long, endOfDay166: Long): Flow<Int>
 
-    @Query("SELECT COUNT(*) FROM tabel_guest_159 WHERE user_id_159 = :userId159")
-    fun getTotalGuestCount159(userId159: Int): Flow<Int>
+    @Query("SELECT COUNT(*) FROM tabel_guest_166 WHERE user_id_166 = :userId166")
+    fun getTotalGuestCount166(userId166: Int): Flow<Int>
 
     // shortcut: SQLite LIKE substring matching for offline search, upgrade to Room FTS4/FTS5 when dataset exceeds 10,000 records.
     @Query("""
-        SELECT * FROM tabel_guest_159 
-        WHERE user_id_159 = :userId159 
-        AND (nama_159 LIKE '%' || :keyword159 || '%' 
-             OR keperluan_159 LIKE '%' || :keyword159 || '%' 
-             OR alamat_159 LIKE '%' || :keyword159 || '%') 
-        ORDER BY timestamp_159 DESC
+        SELECT * FROM tabel_guest_166 
+        WHERE user_id_166 = :userId166 
+        AND (nama_166 LIKE '%' || :keyword166 || '%' 
+             OR keperluan_166 LIKE '%' || :keyword166 || '%' 
+             OR alamat_166 LIKE '%' || :keyword166 || '%') 
+        ORDER BY timestamp_166 DESC
     """)
-    fun searchGuests159(userId159: Int, keyword159: String): Flow<List<GuestEntity159>>
+    fun searchGuests166(userId166: Int, keyword166: String): Flow<List<GuestEntity166>>
 
     @Query("""
-        SELECT * FROM tabel_guest_159 
-        WHERE user_id_159 = :userId159 
-        AND (nama_159 LIKE '%' || :keyword159 || '%' 
-             OR keperluan_159 LIKE '%' || :keyword159 || '%' 
-             OR alamat_159 LIKE '%' || :keyword159 || '%') 
-        ORDER BY timestamp_159 DESC
+        SELECT * FROM tabel_guest_166 
+        WHERE user_id_166 = :userId166 
+        AND (nama_166 LIKE '%' || :keyword166 || '%' 
+             OR keperluan_166 LIKE '%' || :keyword166 || '%' 
+             OR alamat_166 LIKE '%' || :keyword166 || '%') 
+        ORDER BY timestamp_166 DESC
     """)
-    fun searchGuestsByUser159(userId159: Int, keyword159: String): Flow<List<GuestEntity159>>
+    fun searchGuestsByUser166(userId166: Int, keyword166: String): Flow<List<GuestEntity166>>
 }

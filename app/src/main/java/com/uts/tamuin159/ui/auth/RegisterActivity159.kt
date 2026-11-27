@@ -1,97 +1,97 @@
-package com.uts.tamuin159.ui.auth
+package com.uts.tamuin166.ui.auth
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.uts.tamuin159.R
-import com.uts.tamuin159.data.AppDatabase159
-import com.uts.tamuin159.data.dao.UserDao159
-import com.uts.tamuin159.data.entity.UserEntity159
-import com.uts.tamuin159.databinding.ActivityRegister159Binding
+import com.uts.tamuin166.R
+import com.uts.tamuin166.data.AppDatabase166
+import com.uts.tamuin166.data.dao.UserDao166
+import com.uts.tamuin166.data.entity.UserEntity166
+import com.uts.tamuin166.databinding.ActivityRegister166Binding
 import kotlinx.coroutines.launch
 
-class RegisterActivity159 : AppCompatActivity() {
+class RegisterActivity166 : AppCompatActivity() {
 
-    private lateinit var binding159: ActivityRegister159Binding
-    private lateinit var userDao159: UserDao159
+    private lateinit var binding166: ActivityRegister166Binding
+    private lateinit var userDao166: UserDao166
 
-    override fun onCreate(savedInstanceState159: Bundle?) {
-        super.onCreate(savedInstanceState159)
-        binding159 = ActivityRegister159Binding.inflate(layoutInflater)
-        setContentView(binding159.root)
+    override fun onCreate(savedInstanceState166: Bundle?) {
+        super.onCreate(savedInstanceState166)
+        binding166 = ActivityRegister166Binding.inflate(layoutInflater)
+        setContentView(binding166.root)
 
-        val database159 = AppDatabase159.getDatabase159(this)
-        userDao159 = database159.userDao159()
+        val database166 = AppDatabase166.getDatabase166(this)
+        userDao166 = database166.userDao166()
 
-        setupListeners159()
+        setupListeners166()
     }
 
-    private fun setupListeners159() {
-        binding159.btnRegister159.setOnClickListener {
-            performRegister159()
+    private fun setupListeners166() {
+        binding166.btnRegister166.setOnClickListener {
+            performRegister166()
         }
 
-        binding159.tvBackToLogin159.setOnClickListener {
+        binding166.tvBackToLogin166.setOnClickListener {
             finish()
         }
     }
 
-    private fun performRegister159() {
-        val username159 = binding159.etRegUsername159.text.toString().trim()
-        val password159 = binding159.etRegPassword159.text.toString().trim()
-        val confirmPassword159 = binding159.etRegConfirmPassword159.text.toString().trim()
+    private fun performRegister166() {
+        val username166 = binding166.etRegUsername166.text.toString().trim()
+        val password166 = binding166.etRegPassword166.text.toString().trim()
+        val confirmPassword166 = binding166.etRegConfirmPassword166.text.toString().trim()
 
-        binding159.tilRegUsername159.error = null
-        binding159.tilRegPassword159.error = null
-        binding159.tilRegConfirmPassword159.error = null
+        binding166.tilRegUsername166.error = null
+        binding166.tilRegPassword166.error = null
+        binding166.tilRegConfirmPassword166.error = null
 
-        var isValid159 = true
+        var isValid166 = true
 
-        if (!com.uts.tamuin159.utils.ValidationHelper159.isValidUsername159(username159)) {
-            binding159.tilRegUsername159.error = getString(R.string.err_empty_username_159)
-            isValid159 = false
+        if (!com.uts.tamuin166.utils.ValidationHelper166.isValidUsername166(username166)) {
+            binding166.tilRegUsername166.error = getString(R.string.err_empty_username_166)
+            isValid166 = false
         }
 
-        if (password159.isEmpty()) {
-            binding159.tilRegPassword159.error = getString(R.string.err_empty_password_159)
-            isValid159 = false
-        } else if (!com.uts.tamuin159.utils.ValidationHelper159.isValidPassword159(password159)) {
-            binding159.tilRegPassword159.error = getString(R.string.err_password_too_short_159)
-            isValid159 = false
+        if (password166.isEmpty()) {
+            binding166.tilRegPassword166.error = getString(R.string.err_empty_password_166)
+            isValid166 = false
+        } else if (!com.uts.tamuin166.utils.ValidationHelper166.isValidPassword166(password166)) {
+            binding166.tilRegPassword166.error = getString(R.string.err_password_too_short_166)
+            isValid166 = false
         }
 
-        if (confirmPassword159.isEmpty()) {
-            binding159.tilRegConfirmPassword159.error = getString(R.string.err_empty_password_159)
-            isValid159 = false
-        } else if (!com.uts.tamuin159.utils.ValidationHelper159.doPasswordsMatch159(password159, confirmPassword159)) {
-            binding159.tilRegConfirmPassword159.error = getString(R.string.err_passwords_mismatch_159)
-            isValid159 = false
+        if (confirmPassword166.isEmpty()) {
+            binding166.tilRegConfirmPassword166.error = getString(R.string.err_empty_password_166)
+            isValid166 = false
+        } else if (!com.uts.tamuin166.utils.ValidationHelper166.doPasswordsMatch166(password166, confirmPassword166)) {
+            binding166.tilRegConfirmPassword166.error = getString(R.string.err_passwords_mismatch_166)
+            isValid166 = false
         }
 
-        if (!isValid159) return
+        if (!isValid166) return
 
         lifecycleScope.launch {
-            val existingUser159 = userDao159.getUserByUsername159(username159)
-            if (existingUser159 != null) {
-                binding159.tilRegUsername159.error = getString(R.string.err_username_exists_159)
+            val existingUser166 = userDao166.getUserByUsername166(username166)
+            if (existingUser166 != null) {
+                binding166.tilRegUsername166.error = getString(R.string.err_username_exists_166)
                 Toast.makeText(
-                    this@RegisterActivity159,
-                    getString(R.string.err_username_exists_159),
+                    this@RegisterActivity166,
+                    getString(R.string.err_username_exists_166),
                     Toast.LENGTH_SHORT
                 ).show()
                 return@launch
             }
 
-            val newUser159 = UserEntity159(
-                username_159 = username159,
-                password_159 = password159
+            val newUser166 = UserEntity166(
+                username_166 = username166,
+                password_166 = password166
             )
-            userDao159.registerUser159(newUser159)
+            userDao166.registerUser166(newUser166)
 
             Toast.makeText(
-                this@RegisterActivity159,
-                getString(R.string.success_register_159),
+                this@RegisterActivity166,
+                getString(R.string.success_register_166),
                 Toast.LENGTH_SHORT
             ).show()
             finish()

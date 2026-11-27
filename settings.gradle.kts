@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TamuIn 159"
+rootProject.name = "TamuIn 166"
 include(":app")

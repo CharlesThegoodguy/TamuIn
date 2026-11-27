@@ -1,2 +1,2 @@
-# Proguard rules for TamuIn 159
--keep class com.uts.tamuin159.data.entity.** { *; }
+# Proguard rules for TamuIn 166
+-keep class com.uts.tamuin166.data.entity.** { *; }

@@ -1,20 +1,20 @@
-package com.uts.tamuin159.utils
+package com.uts.tamuin166.utils
 
-object ValidationHelper159 {
+object ValidationHelper166 {
 
-    fun isValidUsername159(username159: String): Boolean {
-        return username159.trim().isNotEmpty()
+    fun isValidUsername166(username166: String): Boolean {
+        return username166.trim().isNotEmpty()
     }
 
-    fun isValidPassword159(password159: String): Boolean {
-        return password159.trim().length >= 6
+    fun isValidPassword166(password166: String): Boolean {
+        return password166.trim().length >= 6
     }
 
-    fun doPasswordsMatch159(password159: String, confirmPassword159: String): Boolean {
-        return password159 == confirmPassword159
+    fun doPasswordsMatch166(password166: String, confirmPassword166: String): Boolean {
+        return password166 == confirmPassword166
     }
 
-    fun isValidGuestField159(value159: String): Boolean {
-        return value159.trim().isNotEmpty()
+    fun isValidGuestField166(value166: String): Boolean {
+        return value166.trim().isNotEmpty()
     }
 }

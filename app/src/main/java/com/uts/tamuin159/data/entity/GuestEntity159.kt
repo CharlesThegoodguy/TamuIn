@@ -1,4 +1,4 @@
-package com.uts.tamuin159.data.entity
+package com.uts.tamuin166.data.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -6,33 +6,33 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "tabel_guest_159",
+    tableName = "tabel_guest_166",
     foreignKeys = [
         ForeignKey(
-            entity = UserEntity159::class,
-            parentColumns = ["id_159"],
-            childColumns = ["user_id_159"],
+            entity = UserEntity166::class,
+            parentColumns = ["id_166"],
+            childColumns = ["user_id_166"],
             onDelete = ForeignKey.CASCADE
         )
     ]
 )
-data class GuestEntity159(
+data class GuestEntity166(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id_159")
-    val id_159: Int = 0,
+    @ColumnInfo(name = "id_166")
+    val id_166: Int = 0,
 
-    @ColumnInfo(name = "user_id_159", index = true)
-    val user_id_159: Int,
+    @ColumnInfo(name = "user_id_166", index = true)
+    val user_id_166: Int,
 
-    @ColumnInfo(name = "nama_159")
-    val nama_159: String,
+    @ColumnInfo(name = "nama_166")
+    val nama_166: String,
 
-    @ColumnInfo(name = "alamat_159")
-    val alamat_159: String,
+    @ColumnInfo(name = "alamat_166")
+    val alamat_166: String,
 
-    @ColumnInfo(name = "keperluan_159")
-    val keperluan_159: String,
+    @ColumnInfo(name = "keperluan_166")
+    val keperluan_166: String,
 
-    @ColumnInfo(name = "timestamp_159")
-    val timestamp_159: Long
+    @ColumnInfo(name = "timestamp_166")
+    val timestamp_166: Long
 )

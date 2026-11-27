@@ -1,61 +1,61 @@
-package com.uts.tamuin159.ui.dashboard
+package com.uts.tamuin166.ui.dashboard
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.uts.tamuin159.data.entity.GuestEntity159
-import com.uts.tamuin159.databinding.ItemGuest159Binding
-import com.uts.tamuin159.utils.DateHelper159
+import com.uts.tamuin166.data.entity.GuestEntity166
+import com.uts.tamuin166.databinding.ItemGuest166Binding
+import com.uts.tamuin166.utils.DateHelper166
 
-class GuestAdapter159(
-    private val onItemClick159: (GuestEntity159) -> Unit
-) : ListAdapter<GuestEntity159, GuestAdapter159.GuestViewHolder159>(DiffCallback159) {
+class GuestAdapter166(
+    private val onItemClick166: (GuestEntity166) -> Unit
+) : ListAdapter<GuestEntity166, GuestAdapter166.GuestViewHolder166>(DiffCallback166) {
 
-    override fun onCreateViewHolder(parent159: ViewGroup, viewType159: Int): GuestViewHolder159 {
-        val binding159 = ItemGuest159Binding.inflate(
-            LayoutInflater.from(parent159.context),
-            parent159,
+    override fun onCreateViewHolder(parent166: ViewGroup, viewType166: Int): GuestViewHolder166 {
+        val binding166 = ItemGuest166Binding.inflate(
+            LayoutInflater.from(parent166.context),
+            parent166,
             false
         )
-        return GuestViewHolder159(binding159)
+        return GuestViewHolder166(binding166)
     }
 
-    override fun onBindViewHolder(holder159: GuestViewHolder159, position159: Int) {
-        val guestItem159 = getItem(position159)
-        holder159.bind159(guestItem159)
+    override fun onBindViewHolder(holder166: GuestViewHolder166, position166: Int) {
+        val guestItem166 = getItem(position166)
+        holder166.bind166(guestItem166)
     }
 
-    inner class GuestViewHolder159(
-        private val itemBinding159: ItemGuest159Binding
-    ) : RecyclerView.ViewHolder(itemBinding159.root) {
+    inner class GuestViewHolder166(
+        private val itemBinding166: ItemGuest166Binding
+    ) : RecyclerView.ViewHolder(itemBinding166.root) {
 
-        fun bind159(guest159: GuestEntity159) {
-            itemBinding159.tvGuestName159.text = guest159.nama_159
-            itemBinding159.tvGuestAddress159.text = guest159.alamat_159
-            itemBinding159.tvGuestPurpose159.text = guest159.keperluan_159
-            itemBinding159.tvGuestTimestamp159.text = DateHelper159.formatTimestamp159(guest159.timestamp_159)
+        fun bind166(guest166: GuestEntity166) {
+            itemBinding166.tvGuestName166.text = guest166.nama_166
+            itemBinding166.tvGuestAddress166.text = guest166.alamat_166
+            itemBinding166.tvGuestPurpose166.text = guest166.keperluan_166
+            itemBinding166.tvGuestTimestamp166.text = DateHelper166.formatTimestamp166(guest166.timestamp_166)
 
-            itemBinding159.root.setOnClickListener {
-                onItemClick159(guest159)
+            itemBinding166.root.setOnClickListener {
+                onItemClick166(guest166)
             }
         }
     }
 
-    companion object DiffCallback159 : DiffUtil.ItemCallback<GuestEntity159>() {
+    companion object DiffCallback166 : DiffUtil.ItemCallback<GuestEntity166>() {
         override fun areItemsTheSame(
-            oldItem159: GuestEntity159,
-            newItem159: GuestEntity159
+            oldItem166: GuestEntity166,
+            newItem166: GuestEntity166
         ): Boolean {
-            return oldItem159.id_159 == newItem159.id_159
+            return oldItem166.id_166 == newItem166.id_166
         }
 
         override fun areContentsTheSame(
-            oldItem159: GuestEntity159,
-            newItem159: GuestEntity159
+            oldItem166: GuestEntity166,
+            newItem166: GuestEntity166
         ): Boolean {
-            return oldItem159 == newItem159
+            return oldItem166 == newItem166
         }
     }
 }

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Brand & Accent Colors (Apple-inspired Pure White & iOS Blue) -->
-    <color name="primary_159">#FFFFFF</color>
-    <color name="primary_dark_159">#F8FAFC</color>
-    <color name="accent_blue_159">#007AFF</color>
-    <color name="accent_blue_subtle_159">#F0F6FF</color>
+    <color name="primary_166">#FFFFFF</color>
+    <color name="primary_dark_166">#F8FAFC</color>
+    <color name="accent_blue_166">#007AFF</color>
+    <color name="accent_blue_subtle_166">#F0F6FF</color>
     
     <!-- Surfaces & Backgrounds -->
-    <color name="bg_screen_159">#F9FAFB</color>
-    <color name="surface_card_159">#FFFFFF</color>
-    <color name="stroke_subtle_159">#E5E7EB</color>
-    <color name="search_bg_159">#F3F4F6</color>
+    <color name="bg_screen_166">#F9FAFB</color>
+    <color name="surface_card_166">#FFFFFF</color>
+    <color name="stroke_subtle_166">#E5E7EB</color>
+    <color name="search_bg_166">#F3F4F6</color>
     
     <!-- Typography Colors -->
-    <color name="text_primary_159">#111827</color>
-    <color name="text_secondary_159">#6B7280</color>
-    <color name="text_tertiary_159">#9CA3AF</color>
-    <color name="white_159">#FFFFFF</color>
+    <color name="text_primary_166">#111827</color>
+    <color name="text_secondary_166">#6B7280</color>
+    <color name="text_tertiary_166">#9CA3AF</color>
+    <color name="white_166">#FFFFFF</color>
     
     <!-- Status Colors -->
-    <color name="error_red_159">#DC2626</color>
-    <color name="error_red_subtle_159">#FEF2F2</color>
-    <color name="success_green_159">#16A34A</color>
+    <color name="error_red_166">#DC2626</color>
+    <color name="error_red_subtle_166">#FEF2F2</color>
+    <color name="success_green_166">#16A34A</color>
 </resources>

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Brand & Accent Colors (Apple-inspired Dark Theme) -->
-    <color name="primary_159">#38BDF8</color>
-    <color name="primary_dark_159">#0284C7</color>
-    <color name="accent_blue_159">#3B82F6</color>
-    <color name="accent_blue_subtle_159">#1E293B</color>
+    <color name="primary_166">#38BDF8</color>
+    <color name="primary_dark_166">#0284C7</color>
+    <color name="accent_blue_166">#3B82F6</color>
+    <color name="accent_blue_subtle_166">#1E293B</color>
     
     <!-- Surfaces & Backgrounds (Dark Mode) -->
-    <color name="bg_screen_159">#0B0F19</color>
-    <color name="surface_card_159">#161F2E</color>
-    <color name="stroke_subtle_159">#253248</color>
-    <color name="search_bg_159">#1A2436</color>
+    <color name="bg_screen_166">#0B0F19</color>
+    <color name="surface_card_166">#161F2E</color>
+    <color name="stroke_subtle_166">#253248</color>
+    <color name="search_bg_166">#1A2436</color>
     
     <!-- Typography Colors (Dark Mode) -->
-    <color name="text_primary_159">#F8FAFC</color>
-    <color name="text_secondary_159">#94A3B8</color>
-    <color name="text_tertiary_159">#64748B</color>
-    <color name="white_159">#FFFFFF</color>
+    <color name="text_primary_166">#F8FAFC</color>
+    <color name="text_secondary_166">#94A3B8</color>
+    <color name="text_tertiary_166">#64748B</color>
+    <color name="white_166">#FFFFFF</color>
     
     <!-- Status Colors (Dark Mode) -->
-    <color name="error_red_159">#F87171</color>
-    <color name="error_red_subtle_159">#2C1518</color>
-    <color name="success_green_159">#34D399</color>
+    <color name="error_red_166">#F87171</color>
+    <color name="error_red_subtle_166">#2C1518</color>
+    <color name="success_green_166">#34D399</color>
 </resources>

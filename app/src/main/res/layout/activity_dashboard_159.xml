@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_screen_159">
+    android:background="@color/bg_screen_166">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
 
             <!-- Top Bar: Greeting & Logout -->
             <LinearLayout
-                android:id="@+id/layoutHeader159"
+                android:id="@+id/layoutHeader166"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -34,46 +34,46 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvWelcomeUser159"
+                        android:id="@+id/tvWelcomeUser166"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-black"
-                        android:textColor="@color/text_primary_159"
+                        android:textColor="@color/text_primary_166"
                         android:textSize="22sp"
-                        tools:text="Halo, Admin159" />
+                        tools:text="Halo, Admin166" />
 
                     <TextView
-                        android:id="@+id/tvAppSubtitleHeader159"
+                        android:id="@+id/tvAppSubtitleHeader166"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:fontFamily="sans-serif"
-                        android:text="@string/app_tagline_159"
-                        android:textColor="@color/text_secondary_159"
+                        android:text="@string/app_tagline_166"
+                        android:textColor="@color/text_secondary_166"
                         android:textSize="13sp" />
                 </LinearLayout>
 
                 <!-- Logout Button -->
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnLogout159"
+                    android:id="@+id/btnLogout166"
                     style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:backgroundTint="@color/error_red_subtle_159"
+                    android:backgroundTint="@color/error_red_subtle_166"
                     android:paddingHorizontal="12dp"
-                    android:text="@string/logout_159"
-                    android:textColor="@color/error_red_159"
+                    android:text="@string/logout_166"
+                    android:textColor="@color/error_red_166"
                     android:textSize="13sp"
                     app:cornerRadius="12dp"
-                    app:icon="@drawable/ic_logout_159"
+                    app:icon="@drawable/ic_logout_166"
                     app:iconPadding="4dp"
                     app:iconSize="16dp"
-                    app:iconTint="@color/error_red_159" />
+                    app:iconTint="@color/error_red_166" />
             </LinearLayout>
 
             <!-- Card Rekapitulasi Tamu Harian & Total (Apple-inspired clean white card) -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardDailyRekap159"
+                android:id="@+id/cardDailyRekap166"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -84,7 +84,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_card_rekap_159"
+                    android:background="@drawable/bg_card_rekap_166"
                     android:orientation="vertical"
                     android:padding="20dp">
 
@@ -96,21 +96,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/tvCardLabel159"
+                            android:id="@+id/tvCardLabel166"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-medium"
-                            android:text="@string/card_daily_guest_title_159"
-                            android:textColor="@color/text_secondary_159"
+                            android:text="@string/card_daily_guest_title_166"
+                            android:textColor="@color/text_secondary_166"
                             android:textSize="13sp" />
 
                         <TextView
-                            android:id="@+id/tvCurrentDate159"
+                            android:id="@+id/tvCurrentDate166"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-medium"
-                            android:textColor="@color/accent_blue_159"
+                            android:textColor="@color/accent_blue_166"
                             android:textSize="12sp"
                             tools:text="Senin, 09 Nov 2026" />
                     </LinearLayout>
@@ -120,7 +120,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginVertical="12dp"
-                        android:background="@color/stroke_subtle_159" />
+                        android:background="@color/stroke_subtle_166" />
 
                     <!-- Two-Metric Stat Row -->
                     <LinearLayout
@@ -142,7 +142,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-medium"
                                 android:text="Hari Ini"
-                                android:textColor="@color/text_secondary_159"
+                                android:textColor="@color/text_secondary_166"
                                 android:textSize="12sp" />
 
                             <LinearLayout
@@ -153,23 +153,23 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/tvTotalHarian159"
+                                    android:id="@+id/tvTotalHarian166"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="sans-serif-black"
-                                    android:textColor="@color/accent_blue_159"
+                                    android:textColor="@color/accent_blue_166"
                                     android:textSize="32sp"
                                     tools:text="0" />
 
                                 <TextView
-                                    android:id="@+id/tvDailyGuestUnit159"
+                                    android:id="@+id/tvDailyGuestUnit166"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="6dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="sans-serif-medium"
-                                    android:text="@string/card_daily_guest_unit_159"
-                                    android:textColor="@color/text_secondary_159"
+                                    android:text="@string/card_daily_guest_unit_166"
+                                    android:textColor="@color/text_secondary_166"
                                     android:textSize="14sp" />
                             </LinearLayout>
                         </LinearLayout>
@@ -179,7 +179,7 @@
                             android:layout_width="1dp"
                             android:layout_height="44dp"
                             android:layout_marginHorizontal="16dp"
-                            android:background="@color/stroke_subtle_159" />
+                            android:background="@color/stroke_subtle_166" />
 
                         <!-- Metric 2: Total Keseluruhan (PRD Section 6.3) -->
                         <LinearLayout
@@ -194,7 +194,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-medium"
                                 android:text="Total Tamu"
-                                android:textColor="@color/text_secondary_159"
+                                android:textColor="@color/text_secondary_166"
                                 android:textSize="12sp" />
 
                             <LinearLayout
@@ -205,11 +205,11 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/tvTotalSemua159"
+                                    android:id="@+id/tvTotalSemua166"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="sans-serif-black"
-                                    android:textColor="@color/text_primary_159"
+                                    android:textColor="@color/text_primary_166"
                                     android:textSize="32sp"
                                     tools:text="0" />
 
@@ -219,8 +219,8 @@
                                     android:layout_marginStart="6dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="sans-serif-medium"
-                                    android:text="@string/card_daily_guest_unit_159"
-                                    android:textColor="@color/text_secondary_159"
+                                    android:text="@string/card_daily_guest_unit_166"
+                                    android:textColor="@color/text_secondary_166"
                                     android:textSize="14sp" />
                             </LinearLayout>
                         </LinearLayout>
@@ -231,66 +231,66 @@
 
             <!-- Search Bar (Bonus Feature) -->
             <LinearLayout
-                android:id="@+id/layoutSearch159"
+                android:id="@+id/layoutSearch166"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/bg_search_box_159"
+                android:background="@drawable/bg_search_box_166"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingHorizontal="14dp">
 
                 <ImageView
-                    android:id="@+id/ivSearchIcon159"
+                    android:id="@+id/ivSearchIcon166"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:contentDescription="@string/search_hint_159"
-                    android:src="@drawable/ic_search_159"
-                    app:tint="@color/text_secondary_159" />
+                    android:contentDescription="@string/search_hint_166"
+                    android:src="@drawable/ic_search_166"
+                    app:tint="@color/text_secondary_166" />
 
                 <EditText
-                    android:id="@+id/etSearchGuest159"
+                    android:id="@+id/etSearchGuest166"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:hint="@string/search_hint_159"
+                    android:hint="@string/search_hint_166"
                     android:imeOptions="actionSearch"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:textColor="@color/text_primary_159"
-                    android:textColorHint="@color/text_tertiary_159"
+                    android:textColor="@color/text_primary_166"
+                    android:textColorHint="@color/text_tertiary_166"
                     android:textSize="14sp" />
 
                 <ImageView
-                    android:id="@+id/ivClearSearch159"
+                    android:id="@+id/ivClearSearch166"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:clickable="true"
-                    android:contentDescription="@string/btn_cancel_159"
+                    android:contentDescription="@string/btn_cancel_166"
                     android:focusable="true"
-                    android:src="@drawable/ic_delete_159"
+                    android:src="@drawable/ic_delete_166"
                     android:visibility="gone"
-                    app:tint="@color/text_secondary_159"
+                    app:tint="@color/text_secondary_166"
                     tools:visibility="visible" />
             </LinearLayout>
 
             <!-- Section Title -->
             <TextView
-                android:id="@+id/tvSectionTitle159"
+                android:id="@+id/tvSectionTitle166"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="12dp"
                 android:fontFamily="sans-serif-black"
-                android:text="@string/recent_guests_title_159"
-                android:textColor="@color/text_primary_159"
+                android:text="@string/recent_guests_title_166"
+                android:textColor="@color/text_primary_166"
                 android:textSize="17sp" />
 
             <!-- Empty State View -->
             <LinearLayout
-                android:id="@+id/layoutEmptyState159"
+                android:id="@+id/layoutEmptyState166"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -301,60 +301,60 @@
                 tools:visibility="visible">
 
                 <ImageView
-                    android:id="@+id/ivEmptyState159"
+                    android:id="@+id/ivEmptyState166"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:contentDescription="@string/empty_guest_list_title_159"
-                    android:src="@drawable/ic_empty_state_159" />
+                    android:contentDescription="@string/empty_guest_list_title_166"
+                    android:src="@drawable/ic_empty_state_166" />
 
                 <TextView
-                    android:id="@+id/tvEmptyTitle159"
+                    android:id="@+id/tvEmptyTitle166"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:fontFamily="sans-serif-black"
-                    android:text="@string/empty_guest_list_title_159"
-                    android:textColor="@color/text_primary_159"
+                    android:text="@string/empty_guest_list_title_166"
+                    android:textColor="@color/text_primary_166"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tvEmptyDesc159"
+                    android:id="@+id/tvEmptyDesc166"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:fontFamily="sans-serif"
                     android:gravity="center"
-                    android:text="@string/empty_guest_list_desc_159"
-                    android:textColor="@color/text_secondary_159"
+                    android:text="@string/empty_guest_list_desc_166"
+                    android:textColor="@color/text_secondary_166"
                     android:textSize="13sp" />
             </LinearLayout>
 
             <!-- Guest RecyclerView -->
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvGuestList159"
+                android:id="@+id/rvGuestList166"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
                 tools:itemCount="3"
-                tools:listitem="@layout/item_guest_159" />
+                tools:listitem="@layout/item_guest_166" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
     <!-- Floating Action Button (+ Tambah Tamu) -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/fabAddGuest159"
+        android:id="@+id/fabAddGuest166"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
-        android:backgroundTint="@color/accent_blue_159"
-        android:contentDescription="@string/title_add_guest_159"
+        android:backgroundTint="@color/accent_blue_166"
+        android:contentDescription="@string/title_add_guest_166"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/title_add_guest_159"
-        android:textColor="@color/white_159"
-        app:icon="@drawable/ic_add_159"
-        app:iconTint="@color/white_159" />
+        android:text="@string/title_add_guest_166"
+        android:textColor="@color/white_166"
+        app:icon="@drawable/ic_add_166"
+        app:iconTint="@color/white_166" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

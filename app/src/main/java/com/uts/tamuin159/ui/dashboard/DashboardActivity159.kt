@@ -1,4 +1,4 @@
-package com.uts.tamuin159.ui.dashboard
+package com.uts.tamuin166.ui.dashboard
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,15 +11,15 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.uts.tamuin159.R
-import com.uts.tamuin159.data.AppDatabase159
-import com.uts.tamuin159.data.dao.GuestDao159
-import com.uts.tamuin159.data.entity.GuestEntity159
-import com.uts.tamuin159.databinding.ActivityDashboard159Binding
-import com.uts.tamuin159.ui.auth.LoginActivity159
-import com.uts.tamuin159.ui.form.GuestFormActivity159
-import com.uts.tamuin159.utils.DateHelper159
-import com.uts.tamuin159.utils.SessionManager159
+import com.uts.tamuin166.R
+import com.uts.tamuin166.data.AppDatabase166
+import com.uts.tamuin166.data.dao.GuestDao166
+import com.uts.tamuin166.data.entity.GuestEntity166
+import com.uts.tamuin166.databinding.ActivityDashboard166Binding
+import com.uts.tamuin166.ui.auth.LoginActivity166
+import com.uts.tamuin166.ui.form.GuestFormActivity166
+import com.uts.tamuin166.utils.DateHelper166
+import com.uts.tamuin166.utils.SessionManager166
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -27,163 +27,163 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class DashboardActivity159 : AppCompatActivity() {
+class DashboardActivity166 : AppCompatActivity() {
 
-    private lateinit var binding159: ActivityDashboard159Binding
-    private lateinit var sessionManager159: SessionManager159
-    private lateinit var guestDao159: GuestDao159
-    private lateinit var guestAdapter159: GuestAdapter159
+    private lateinit var binding166: ActivityDashboard166Binding
+    private lateinit var sessionManager166: SessionManager166
+    private lateinit var guestDao166: GuestDao166
+    private lateinit var guestAdapter166: GuestAdapter166
 
-    private val searchQueryFlow159 = MutableStateFlow("")
+    private val searchQueryFlow166 = MutableStateFlow("")
 
-    override fun onCreate(savedInstanceState159: Bundle?) {
-        super.onCreate(savedInstanceState159)
+    override fun onCreate(savedInstanceState166: Bundle?) {
+        super.onCreate(savedInstanceState166)
 
-        sessionManager159 = SessionManager159(this)
-        if (!sessionManager159.isLoggedIn159()) {
-            redirectToLogin159()
+        sessionManager166 = SessionManager166(this)
+        if (!sessionManager166.isLoggedIn166()) {
+            redirectToLogin166()
             return
         }
 
-        binding159 = ActivityDashboard159Binding.inflate(layoutInflater)
-        setContentView(binding159.root)
+        binding166 = ActivityDashboard166Binding.inflate(layoutInflater)
+        setContentView(binding166.root)
 
-        val database159 = AppDatabase159.getDatabase159(this)
-        guestDao159 = database159.guestDao159()
+        val database166 = AppDatabase166.getDatabase166(this)
+        guestDao166 = database166.guestDao166()
 
-        setupViews159()
-        setupRecyclerView159()
-        setupListeners159()
-        setupObservers159()
+        setupViews166()
+        setupRecyclerView166()
+        setupListeners166()
+        setupObservers166()
     }
 
-    private fun setupViews159() {
-        val username159 = sessionManager159.getUsername159()
-        binding159.tvWelcomeUser159.text = "${getString(R.string.greeting_user_prefix_159)}$username159"
-        binding159.tvCurrentDate159.text = DateHelper159.formatCurrentDateHeader159()
+    private fun setupViews166() {
+        val username166 = sessionManager166.getUsername166()
+        binding166.tvWelcomeUser166.text = "${getString(R.string.greeting_user_prefix_166)}$username166"
+        binding166.tvCurrentDate166.text = DateHelper166.formatCurrentDateHeader166()
     }
 
-    private fun setupRecyclerView159() {
-        guestAdapter159 = GuestAdapter159 { selectedGuest159 ->
-            openGuestForm159(selectedGuest159.id_159)
+    private fun setupRecyclerView166() {
+        guestAdapter166 = GuestAdapter166 { selectedGuest166 ->
+            openGuestForm166(selectedGuest166.id_166)
         }
 
-        binding159.rvGuestList159.apply {
-            layoutManager = LinearLayoutManager(this@DashboardActivity159)
-            adapter = guestAdapter159
+        binding166.rvGuestList166.apply {
+            layoutManager = LinearLayoutManager(this@DashboardActivity166)
+            adapter = guestAdapter166
             setHasFixedSize(false)
         }
     }
 
-    private fun setupListeners159() {
+    private fun setupListeners166() {
         // FAB Add Guest
-        binding159.fabAddGuest159.setOnClickListener {
-            openGuestForm159(-1)
+        binding166.fabAddGuest166.setOnClickListener {
+            openGuestForm166(-1)
         }
 
         // Logout Button
-        binding159.btnLogout159.setOnClickListener {
-            showLogoutDialog159()
+        binding166.btnLogout166.setOnClickListener {
+            showLogoutDialog166()
         }
 
         // Search Input Watcher
-        binding159.etSearchGuest159.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s159: CharSequence?, start159: Int, count159: Int, after159: Int) {}
-            override fun onTextChanged(s159: CharSequence?, start159: Int, before159: Int, count159: Int) {
-                val keyword159 = s159?.toString()?.trim() ?: ""
-                searchQueryFlow159.value = keyword159
-                binding159.ivClearSearch159.visibility = if (keyword159.isNotEmpty()) View.VISIBLE else View.GONE
+        binding166.etSearchGuest166.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s166: CharSequence?, start166: Int, count166: Int, after166: Int) {}
+            override fun onTextChanged(s166: CharSequence?, start166: Int, before166: Int, count166: Int) {
+                val keyword166 = s166?.toString()?.trim() ?: ""
+                searchQueryFlow166.value = keyword166
+                binding166.ivClearSearch166.visibility = if (keyword166.isNotEmpty()) View.VISIBLE else View.GONE
             }
-            override fun afterTextChanged(s159: Editable?) {}
+            override fun afterTextChanged(s166: Editable?) {}
         })
 
         // Clear Search Button
-        binding159.ivClearSearch159.setOnClickListener {
-            binding159.etSearchGuest159.text.clear()
+        binding166.ivClearSearch166.setOnClickListener {
+            binding166.etSearchGuest166.text.clear()
         }
     }
 
-    private fun setupObservers159() {
-        val currentUserId159 = sessionManager159.getUserId159()
-        val startOfDay159 = DateHelper159.getStartOfDay159()
-        val endOfDay159 = DateHelper159.getEndOfDay159()
+    private fun setupObservers166() {
+        val currentUserId166 = sessionManager166.getUserId166()
+        val startOfDay166 = DateHelper166.getStartOfDay166()
+        val endOfDay166 = DateHelper166.getEndOfDay166()
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 // Observe Daily Guest Count
                 launch {
-                    guestDao159.getDailyGuestCount159(currentUserId159, startOfDay159, endOfDay159)
-                        .collectLatest { dailyCount159 ->
-                            binding159.tvTotalHarian159.text = dailyCount159.toString()
+                    guestDao166.getDailyGuestCount166(currentUserId166, startOfDay166, endOfDay166)
+                        .collectLatest { dailyCount166 ->
+                            binding166.tvTotalHarian166.text = dailyCount166.toString()
                         }
                 }
 
                 // Observe Total Guest Count (PRD Section 6.3)
                 launch {
-                    guestDao159.getTotalGuestCount159(currentUserId159)
-                        .collectLatest { totalCount159 ->
-                            binding159.tvTotalSemua159.text = totalCount159.toString()
+                    guestDao166.getTotalGuestCount166(currentUserId166)
+                        .collectLatest { totalCount166 ->
+                            binding166.tvTotalSemua166.text = totalCount166.toString()
                         }
                 }
 
                 // Observe Guest List (reactive with Search)
                 launch {
-                    searchQueryFlow159.flatMapLatest { query159 ->
-                        if (query159.isEmpty()) {
-                            guestDao159.getGuestsByUser159(currentUserId159)
+                    searchQueryFlow166.flatMapLatest { query166 ->
+                        if (query166.isEmpty()) {
+                            guestDao166.getGuestsByUser166(currentUserId166)
                         } else {
-                            guestDao159.searchGuests159(currentUserId159, query159)
+                            guestDao166.searchGuests166(currentUserId166, query166)
                         }
-                    }.collectLatest { guestList159 ->
-                        guestAdapter159.submitList(guestList159)
-                        updateEmptyState159(guestList159.isEmpty(), searchQueryFlow159.value.isNotEmpty())
+                    }.collectLatest { guestList166 ->
+                        guestAdapter166.submitList(guestList166)
+                        updateEmptyState166(guestList166.isEmpty(), searchQueryFlow166.value.isNotEmpty())
                     }
                 }
             }
         }
     }
 
-    private fun updateEmptyState159(isEmpty159: Boolean, isSearching159: Boolean) {
-        if (isEmpty159) {
-            binding159.layoutEmptyState159.visibility = View.VISIBLE
-            binding159.rvGuestList159.visibility = View.GONE
-            if (isSearching159) {
-                binding159.tvEmptyTitle159.text = "Tidak Ada Hasil Pencarian"
-                binding159.tvEmptyDesc159.text = "Tidak ditemukan data tamu yang cocok dengan kata kunci pencarian Anda."
+    private fun updateEmptyState166(isEmpty166: Boolean, isSearching166: Boolean) {
+        if (isEmpty166) {
+            binding166.layoutEmptyState166.visibility = View.VISIBLE
+            binding166.rvGuestList166.visibility = View.GONE
+            if (isSearching166) {
+                binding166.tvEmptyTitle166.text = "Tidak Ada Hasil Pencarian"
+                binding166.tvEmptyDesc166.text = "Tidak ditemukan data tamu yang cocok dengan kata kunci pencarian Anda."
             } else {
-                binding159.tvEmptyTitle159.text = getString(R.string.empty_guest_list_title_159)
-                binding159.tvEmptyDesc159.text = getString(R.string.empty_guest_list_desc_159)
+                binding166.tvEmptyTitle166.text = getString(R.string.empty_guest_list_title_166)
+                binding166.tvEmptyDesc166.text = getString(R.string.empty_guest_list_desc_166)
             }
         } else {
-            binding159.layoutEmptyState159.visibility = View.GONE
-            binding159.rvGuestList159.visibility = View.VISIBLE
+            binding166.layoutEmptyState166.visibility = View.GONE
+            binding166.rvGuestList166.visibility = View.VISIBLE
         }
     }
 
-    private fun openGuestForm159(guestId159: Int) {
-        val intent159 = Intent(this, GuestFormActivity159::class.java).apply {
-            putExtra(GuestFormActivity159.EXTRA_GUEST_ID_159, guestId159)
+    private fun openGuestForm166(guestId166: Int) {
+        val intent166 = Intent(this, GuestFormActivity166::class.java).apply {
+            putExtra(GuestFormActivity166.EXTRA_GUEST_ID_166, guestId166)
         }
-        startActivity(intent159)
+        startActivity(intent166)
     }
 
-    private fun showLogoutDialog159() {
+    private fun showLogoutDialog166() {
         MaterialAlertDialogBuilder(this)
-            .setTitle(getString(R.string.dialog_logout_title_159))
-            .setMessage(getString(R.string.dialog_logout_message_159))
-            .setNegativeButton(getString(R.string.btn_cancel_159), null)
-            .setPositiveButton(getString(R.string.btn_logout_confirm_159)) { _, _ ->
-                sessionManager159.clearSession159()
-                redirectToLogin159()
+            .setTitle(getString(R.string.dialog_logout_title_166))
+            .setMessage(getString(R.string.dialog_logout_message_166))
+            .setNegativeButton(getString(R.string.btn_cancel_166), null)
+            .setPositiveButton(getString(R.string.btn_logout_confirm_166)) { _, _ ->
+                sessionManager166.clearSession166()
+                redirectToLogin166()
             }
             .show()
     }
 
-    private fun redirectToLogin159() {
-        val intent159 = Intent(this, LoginActivity159::class.java).apply {
+    private fun redirectToLogin166() {
+        val intent166 = Intent(this, LoginActivity166::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-        startActivity(intent159)
+        startActivity(intent166)
         finish()
     }
 }

@@ -1,4 +1,4 @@
-package com.uts.tamuin159.ui.form
+package com.uts.tamuin166.ui.form
 
 import android.os.Bundle
 import android.view.View
@@ -6,76 +6,76 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.uts.tamuin159.R
-import com.uts.tamuin159.data.AppDatabase159
-import com.uts.tamuin159.data.dao.GuestDao159
-import com.uts.tamuin159.data.entity.GuestEntity159
-import com.uts.tamuin159.databinding.ActivityGuestForm159Binding
-import com.uts.tamuin159.utils.DateHelper159
-import com.uts.tamuin159.utils.SessionManager159
+import com.uts.tamuin166.R
+import com.uts.tamuin166.data.AppDatabase166
+import com.uts.tamuin166.data.dao.GuestDao166
+import com.uts.tamuin166.data.entity.GuestEntity166
+import com.uts.tamuin166.databinding.ActivityGuestForm166Binding
+import com.uts.tamuin166.utils.DateHelper166
+import com.uts.tamuin166.utils.SessionManager166
 import kotlinx.coroutines.launch
 
-class GuestFormActivity159 : AppCompatActivity() {
+class GuestFormActivity166 : AppCompatActivity() {
 
-    private lateinit var binding159: ActivityGuestForm159Binding
-    private lateinit var sessionManager159: SessionManager159
-    private lateinit var guestDao159: GuestDao159
+    private lateinit var binding166: ActivityGuestForm166Binding
+    private lateinit var sessionManager166: SessionManager166
+    private lateinit var guestDao166: GuestDao166
 
-    private var guestId159: Int = -1
-    private var existingGuest159: GuestEntity159? = null
+    private var guestId166: Int = -1
+    private var existingGuest166: GuestEntity166? = null
 
     companion object {
-        const val EXTRA_GUEST_ID_159 = "extra_guest_id_159"
+        const val EXTRA_GUEST_ID_166 = "extra_guest_id_166"
     }
 
-    override fun onCreate(savedInstanceState159: Bundle?) {
-        super.onCreate(savedInstanceState159)
-        binding159 = ActivityGuestForm159Binding.inflate(layoutInflater)
-        setContentView(binding159.root)
+    override fun onCreate(savedInstanceState166: Bundle?) {
+        super.onCreate(savedInstanceState166)
+        binding166 = ActivityGuestForm166Binding.inflate(layoutInflater)
+        setContentView(binding166.root)
 
-        sessionManager159 = SessionManager159(this)
-        val database159 = AppDatabase159.getDatabase159(this)
-        guestDao159 = database159.guestDao159()
+        sessionManager166 = SessionManager166(this)
+        val database166 = AppDatabase166.getDatabase166(this)
+        guestDao166 = database166.guestDao166()
 
-        guestId159 = intent.getIntExtra(EXTRA_GUEST_ID_159, -1)
+        guestId166 = intent.getIntExtra(EXTRA_GUEST_ID_166, -1)
 
-        setupFormMode159()
-        setupListeners159()
+        setupFormMode166()
+        setupListeners166()
     }
 
-    private fun setupFormMode159() {
-        if (guestId159 == -1) {
+    private fun setupFormMode166() {
+        if (guestId166 == -1) {
             // Mode Tambah
-            binding159.tvFormTitle159.text = getString(R.string.title_add_guest_159)
-            binding159.btnSaveGuest159.text = getString(R.string.btn_save_guest_159)
-            binding159.tvInfoWaktu159.text = getString(R.string.info_timestamp_add_159)
-            binding159.btnDeleteGuest159.visibility = View.GONE
+            binding166.tvFormTitle166.text = getString(R.string.title_add_guest_166)
+            binding166.btnSaveGuest166.text = getString(R.string.btn_save_guest_166)
+            binding166.tvInfoWaktu166.text = getString(R.string.info_timestamp_add_166)
+            binding166.btnDeleteGuest166.visibility = View.GONE
         } else {
             // Mode Edit
-            binding159.tvFormTitle159.text = getString(R.string.title_edit_guest_159)
-            binding159.btnSaveGuest159.text = getString(R.string.btn_update_guest_159)
-            binding159.btnDeleteGuest159.visibility = View.VISIBLE
+            binding166.tvFormTitle166.text = getString(R.string.title_edit_guest_166)
+            binding166.btnSaveGuest166.text = getString(R.string.btn_update_guest_166)
+            binding166.btnDeleteGuest166.visibility = View.VISIBLE
 
-            loadExistingGuestData159()
+            loadExistingGuestData166()
         }
     }
 
-    private fun loadExistingGuestData159() {
-        val currentUserId159 = sessionManager159.getUserId159()
+    private fun loadExistingGuestData166() {
+        val currentUserId166 = sessionManager166.getUserId166()
 
         lifecycleScope.launch {
-            val guest159 = guestDao159.getGuestById159(guestId159, currentUserId159)
-            if (guest159 != null) {
-                existingGuest159 = guest159
-                binding159.etNamaTamu159.setText(guest159.nama_159)
-                binding159.etAlamatTamu159.setText(guest159.alamat_159)
-                binding159.etKeperluanTamu159.setText(guest159.keperluan_159)
+            val guest166 = guestDao166.getGuestById166(guestId166, currentUserId166)
+            if (guest166 != null) {
+                existingGuest166 = guest166
+                binding166.etNamaTamu166.setText(guest166.nama_166)
+                binding166.etAlamatTamu166.setText(guest166.alamat_166)
+                binding166.etKeperluanTamu166.setText(guest166.keperluan_166)
 
-                val formattedTime159 = DateHelper159.formatTimestamp159(guest159.timestamp_159)
-                binding159.tvInfoWaktu159.text = "Tercatat pada: $formattedTime159"
+                val formattedTime166 = DateHelper166.formatTimestamp166(guest166.timestamp_166)
+                binding166.tvInfoWaktu166.text = "Tercatat pada: $formattedTime166"
             } else {
                 Toast.makeText(
-                    this@GuestFormActivity159,
+                    this@GuestFormActivity166,
                     "Data tamu tidak ditemukan!",
                     Toast.LENGTH_SHORT
                 ).show()
@@ -84,83 +84,83 @@ class GuestFormActivity159 : AppCompatActivity() {
         }
     }
 
-    private fun setupListeners159() {
-        binding159.btnBack159.setOnClickListener {
+    private fun setupListeners166() {
+        binding166.btnBack166.setOnClickListener {
             finish()
         }
 
-        binding159.btnSaveGuest159.setOnClickListener {
-            saveGuestData159()
+        binding166.btnSaveGuest166.setOnClickListener {
+            saveGuestData166()
         }
 
-        binding159.btnDeleteGuest159.setOnClickListener {
-            showDeleteConfirmation159()
+        binding166.btnDeleteGuest166.setOnClickListener {
+            showDeleteConfirmation166()
         }
     }
 
-    private fun saveGuestData159() {
-        val namaTamu159 = binding159.etNamaTamu159.text.toString().trim()
-        val alamatTamu159 = binding159.etAlamatTamu159.text.toString().trim()
-        val keperluanTamu159 = binding159.etKeperluanTamu159.text.toString().trim()
+    private fun saveGuestData166() {
+        val namaTamu166 = binding166.etNamaTamu166.text.toString().trim()
+        val alamatTamu166 = binding166.etAlamatTamu166.text.toString().trim()
+        val keperluanTamu166 = binding166.etKeperluanTamu166.text.toString().trim()
 
-        binding159.tilNamaTamu159.error = null
-        binding159.tilAlamatTamu159.error = null
-        binding159.tilKeperluanTamu159.error = null
+        binding166.tilNamaTamu166.error = null
+        binding166.tilAlamatTamu166.error = null
+        binding166.tilKeperluanTamu166.error = null
 
-        var isValid159 = true
+        var isValid166 = true
 
-        if (!com.uts.tamuin159.utils.ValidationHelper159.isValidGuestField159(namaTamu159)) {
-            binding159.tilNamaTamu159.error = getString(R.string.err_empty_name_159)
-            isValid159 = false
+        if (!com.uts.tamuin166.utils.ValidationHelper166.isValidGuestField166(namaTamu166)) {
+            binding166.tilNamaTamu166.error = getString(R.string.err_empty_name_166)
+            isValid166 = false
         }
 
-        if (!com.uts.tamuin159.utils.ValidationHelper159.isValidGuestField159(alamatTamu159)) {
-            binding159.tilAlamatTamu159.error = getString(R.string.err_empty_address_159)
-            isValid159 = false
+        if (!com.uts.tamuin166.utils.ValidationHelper166.isValidGuestField166(alamatTamu166)) {
+            binding166.tilAlamatTamu166.error = getString(R.string.err_empty_address_166)
+            isValid166 = false
         }
 
-        if (!com.uts.tamuin159.utils.ValidationHelper159.isValidGuestField159(keperluanTamu159)) {
-            binding159.tilKeperluanTamu159.error = getString(R.string.err_empty_purpose_159)
-            isValid159 = false
+        if (!com.uts.tamuin166.utils.ValidationHelper166.isValidGuestField166(keperluanTamu166)) {
+            binding166.tilKeperluanTamu166.error = getString(R.string.err_empty_purpose_166)
+            isValid166 = false
         }
 
-        if (!isValid159) return
+        if (!isValid166) return
 
-        val currentUserId159 = sessionManager159.getUserId159()
+        val currentUserId166 = sessionManager166.getUserId166()
 
         lifecycleScope.launch {
-            if (guestId159 == -1) {
+            if (guestId166 == -1) {
                 // Insert New Guest
-                val newGuest159 = GuestEntity159(
-                    user_id_159 = currentUserId159,
-                    nama_159 = namaTamu159,
-                    alamat_159 = alamatTamu159,
-                    keperluan_159 = keperluanTamu159,
-                    timestamp_159 = System.currentTimeMillis()
+                val newGuest166 = GuestEntity166(
+                    user_id_166 = currentUserId166,
+                    nama_166 = namaTamu166,
+                    alamat_166 = alamatTamu166,
+                    keperluan_166 = keperluanTamu166,
+                    timestamp_166 = System.currentTimeMillis()
                 )
-                guestDao159.insertGuest159(newGuest159)
+                guestDao166.insertGuest166(newGuest166)
 
                 Toast.makeText(
-                    this@GuestFormActivity159,
-                    getString(R.string.success_save_guest_159),
+                    this@GuestFormActivity166,
+                    getString(R.string.success_save_guest_166),
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
                 // Update Existing Guest
-                val currentTimestamp159 = existingGuest159?.timestamp_159 ?: System.currentTimeMillis()
-                val updatedGuest159 = GuestEntity159(
-                    id_159 = guestId159,
-                    user_id_159 = currentUserId159,
-                    nama_159 = namaTamu159,
-                    alamat_159 = alamatTamu159,
-                    keperluan_159 = keperluanTamu159,
-                    timestamp_159 = currentTimestamp159
+                val currentTimestamp166 = existingGuest166?.timestamp_166 ?: System.currentTimeMillis()
+                val updatedGuest166 = GuestEntity166(
+                    id_166 = guestId166,
+                    user_id_166 = currentUserId166,
+                    nama_166 = namaTamu166,
+                    alamat_166 = alamatTamu166,
+                    keperluan_166 = keperluanTamu166,
+                    timestamp_166 = currentTimestamp166
                 )
-                guestDao159.updateGuest159(updatedGuest159)
+                guestDao166.updateGuest166(updatedGuest166)
 
                 Toast.makeText(
-                    this@GuestFormActivity159,
-                    getString(R.string.success_update_guest_159),
+                    this@GuestFormActivity166,
+                    getString(R.string.success_update_guest_166),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -168,25 +168,25 @@ class GuestFormActivity159 : AppCompatActivity() {
         }
     }
 
-    private fun showDeleteConfirmation159() {
+    private fun showDeleteConfirmation166() {
         MaterialAlertDialogBuilder(this)
-            .setTitle(getString(R.string.dialog_delete_title_159))
-            .setMessage(getString(R.string.dialog_delete_message_159))
-            .setNegativeButton(getString(R.string.btn_cancel_159), null)
-            .setPositiveButton(getString(R.string.btn_delete_confirm_159)) { _, _ ->
-                deleteGuestData159()
+            .setTitle(getString(R.string.dialog_delete_title_166))
+            .setMessage(getString(R.string.dialog_delete_message_166))
+            .setNegativeButton(getString(R.string.btn_cancel_166), null)
+            .setPositiveButton(getString(R.string.btn_delete_confirm_166)) { _, _ ->
+                deleteGuestData166()
             }
             .show()
     }
 
-    private fun deleteGuestData159() {
-        val currentGuest159 = existingGuest159 ?: return
+    private fun deleteGuestData166() {
+        val currentGuest166 = existingGuest166 ?: return
 
         lifecycleScope.launch {
-            guestDao159.deleteGuest159(currentGuest159)
+            guestDao166.deleteGuest166(currentGuest166)
             Toast.makeText(
-                this@GuestFormActivity159,
-                getString(R.string.success_delete_guest_159),
+                this@GuestFormActivity166,
+                getString(R.string.success_delete_guest_166),
                 Toast.LENGTH_SHORT
             ).show()
             finish()

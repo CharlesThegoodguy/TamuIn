@@ -2,17 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:name=".TamuInApp159"
+        android:name=".TamuInApp166"
         android:allowBackup="true"
-        android:icon="@drawable/ic_book_159"
-        android:label="@string/app_name_159"
-        android:roundIcon="@drawable/ic_book_159"
+        android:icon="@drawable/ic_book_166"
+        android:label="@string/app_name_166"
+        android:roundIcon="@drawable/ic_book_166"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TamuIn159">
+        android:theme="@style/Theme.TamuIn166">
 
-        <!-- LoginActivity159: Launcher Activity -->
+        <!-- LoginActivity166: Launcher Activity -->
         <activity
-            android:name=".ui.auth.LoginActivity159"
+            android:name=".ui.auth.LoginActivity166"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -21,21 +21,21 @@
             </intent-filter>
         </activity>
 
-        <!-- RegisterActivity159 -->
+        <!-- RegisterActivity166 -->
         <activity
-            android:name=".ui.auth.RegisterActivity159"
+            android:name=".ui.auth.RegisterActivity166"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- DashboardActivity159 -->
+        <!-- DashboardActivity166 -->
         <activity
-            android:name=".ui.dashboard.DashboardActivity159"
+            android:name=".ui.dashboard.DashboardActivity166"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
 
-        <!-- GuestFormActivity159 -->
+        <!-- GuestFormActivity166 -->
         <activity
-            android:name=".ui.form.GuestFormActivity159"
+            android:name=".ui.form.GuestFormActivity166"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
